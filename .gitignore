@@ -11,3 +11,17 @@
 /log/*
 !/log/.keep
 /tmp
+
+/vendor/bundle/
+/vendor/ruby/
+.sass-cache
+/config/config.yml
+/config/database.yml
+/db/*.sql
+/doc
+/public/cache
+/public/stylesheets/compiled
+/public/system/*
+/cache
+/gems
+/specifications
