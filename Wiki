@@ -1,0 +1,21 @@
+Track of steps
+
+Start server on Nitrous:
+rails server -b, --binding=0.0.0.0
+
+
+1 - Setting the environment on Nitrous
+  a)  > rvm install ruby-2.2.0
+      > gem install rails-4.2.0
+      > gem install bundler
+      
+      Install and Setup Postgre (http://help.nitrous.io/postgresql/) (http://blog.nitrous.io/2013/02/11/postgres-action-io-3.html)
+      
+      > rails new app_name --database=postgresql
+      > bundle install
+      
+      Setup git and heroku
+      Ensure SSL is set in config/environments/production.rb
+      install Puma gem (ref https://www.railstutorial.org/book/sign_up#sec-production_webserver)
+   
+  b) 
