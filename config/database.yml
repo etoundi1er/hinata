@@ -17,8 +17,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: localhost
   username: action
@@ -82,7 +80,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: hinata_production
-  #username: hinata
-  password: <%= ENV['HINATA_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  databse: db4a68g59r34ap
+  username: ujzvtzmfoysmjx
+  password: KN7a9qL0z3_fVfQ-8znTIXIdrV
+  host: ec2-107-20-177-12.compute-1.amazonaws.com
+  port: 5432
