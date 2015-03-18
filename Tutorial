@@ -1,0 +1,35 @@
+POSTGRESQL Commands
+psql               #starts postgre console
+\l                 #List all databases
+\connect db_name   #connects to db
+\dt                #show tables in current db
+\d table_name      #describes table
+\q                 #exit console
+
+
+1 - Static Pages
+    > generate a controller
+        $ rails generate controller StaticPages home help
+            create  app/controllers/static_pages_controller.rb
+             route  get 'static_pages/help'
+             route  get 'static_pages/home'
+            invoke  erb
+            create    app/views/static_pages
+            create    app/views/static_pages/home.html.erb
+            create    app/views/static_pages/help.html.erb
+            .............
+            Will also Create and invoke Test suites and CSS JS
+        
+    > Controller Testing: 
+    Test Driven Development: write a test first (Failing test), then work it out till it passes.
+    In short, look inside the controller_test file, mimic whats already there and look at the console error message to see why the test is failing, then correct based on that message. https://www.railstutorial.org/book/static_pages#sec-red
+    
+    > Application.html.erb: add the app overall item there. (Meta, footer, <body> <%= yield %> </body>)
+    
+    > add this to render dynamic page titles
+        to each page: <% provide(:title, "Home") %>
+        to application.html.erb head section: <title><%= yield(:title) %> - <%= yield(:school_name)</title>
+        
+    > DON'T FORGET TO SET THE root IN THE route.rb FILE
+    
+    > 

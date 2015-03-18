@@ -1,0 +1,56 @@
+Users use cases:
+
+All Users have the same Bio attributes (
+ first_name:string
+ last_name:string
+ username:string
+ date_of_birth:date
+ gender:string
+ phone1:string
+ phone2:string
+ email:string
+ password:string
+ address_line:string
+ city:string
+ country:string
+ is_active:boolean
+ is_deleted:boolean
+ photo_data:binary
+ 
+ )
+ 
+ and a Profile (linked profiles_table) attributes
+
+A Student < Users and has these attributes (
+ student_id:integer
+ group:string
+ enrollment_date:date
+ guardian_id:integer FK
+)
+and a Student association goes as follow: 
+ belongs_to :user
+ belongs_to :group
+ 
+ has_many :guardians
+ has_many :attendances
+ has_many :courses
+ has_many :exam_grades
+ has_many :finance_fees
+ 
+An Employee < Users and has these attributes (
+ employee_id:integer
+ employee_category:string
+ experience_years:integer
+ employee_level:string
+ employee_qualification:string
+ start_date:date
+)
+
+A Guardian < Users and has these attributes (
+ guardian_id:integer
+ relation:string
+ occupation:string
+)
+
+
+
