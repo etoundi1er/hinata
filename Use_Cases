@@ -54,4 +54,25 @@ A Guardian < Users and has these attributes (
 )
 
 
+Attendances attributes (
+ group_id:integer
+ course_id:integer
+ student_id:integer
+ status:integer
+ taken_at:date
+ employee_id:integer
+ )
+ 
+Groups (classes) attributes(
+ group_name:string
+ group_code:string
+ group_room:string
+)
+
+Courses attributes (
+ course_name:string
+ course_code:string
+ group_id:integer
+)
+
 
