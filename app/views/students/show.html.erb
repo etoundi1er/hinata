@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @student.username %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @student.date_of_birth %>
+</p>
+
+<p>
+  <strong>Place of birth:</strong>
+  <%= @student.place_of_birth %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @student.gender %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @student.group %>
+</p>
+
+<p>
+  <strong>Enrollment date:</strong>
+  <%= @student.enrollment_date %>
+</p>
+
+<p>
+  <strong>Guardian:</strong>
+  <%= @student.guardian_id %>
+</p>
+
+<p>
+  <strong>Address line:</strong>
+  <%= @student.address_line %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @student.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @student.country %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @student.is_active %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @student.is_deleted %>
+</p>
+
+<p>
+  <strong>Photo data:</strong>
+  <%= @student.photo_data %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

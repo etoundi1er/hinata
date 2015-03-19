@@ -5,6 +5,7 @@ All Users have the same Bio attributes (
  last_name:string
  username:string
  date_of_birth:date
+ place_of_birth:string
  gender:string
  phone1:string
  phone2:string
