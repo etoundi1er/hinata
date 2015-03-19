@@ -73,6 +73,10 @@ Courses attributes (
  course_name:string
  course_code:string
  group_id:integer
+ course_category:integer
+ has_many :chapters through :curriculum
+ has_many :lessons through :chapter
+ 
 )
 
 

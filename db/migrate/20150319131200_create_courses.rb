@@ -4,7 +4,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :course_name
       t.string :course_code
       t.integer :group_id
-      t.id :course_category
+      t.integer :course_category
 
       t.timestamps null: false
     end
