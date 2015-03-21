@@ -13,8 +13,11 @@
   </head>
 
   <body>
+      <%= render "layouts/breadcrumbs" %>
 
-    <%= yield %>
-
+      <!-- Container Begin -->
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    
   </body>
 </html>
