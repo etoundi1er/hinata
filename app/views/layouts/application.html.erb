@@ -13,11 +13,23 @@
   </head>
 
   <body>
-      <%= render "layouts/breadcrumbs" %>
-
-      <!-- Container Begin -->
-      <%= yield %>
-      <%= render "layouts/footer" %>
+    <div class="row full-width">
+      <%= render "layouts/main_menu" %>
+      
+      <div class="medium-2 columns side-nav">
+        <%= render "layouts/top_menu" %>
+      </div>
+      <div class="medium-10 columns content-wrapper shadow">
+          <%= yield %>
+          <%= render "layouts/footer" %>
+      </div>
+    </div>
     
+    
+    <script>
+    $(function(){
+        $('#menu').slicknav();
+    });
+    </script>
   </body>
 </html>

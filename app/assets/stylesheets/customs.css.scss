@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+    background: #007BB8;
+    padding: 0;
+    height:100%;
+    font-size: 13px !important;
+    color: #888 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: bold;
+}
+p {
+    font-size: 14px !important;
+}
+blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.5625rem 1.25rem 0 1.1875rem;
+  border-left: 3px solid #8c92a3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #222;
+}
+ul, ol, dl {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 13px;
+}
+
+.full-width {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.content-wrapper {
+  height: 100%;
+  background: #fff;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 0px 13px 0px rgba(0, 0, 0, 0.7);
+     -moz-box-shadow: 0 0px 13px 0px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0px 13px 0px rgba(0, 0, 0, 0.7);
+}
+
+/* Side Bar Navigation */
+
+.top-bar-section ul li {
+  padding-right: 20px; 
+  transition: all 0.2s ease 0s;
+}
+
+/* .top-bar {
+  background: #003854;
+} */
+
+/* Navigation with logo and login */
+
+.side-nav{
+  background: #007BB8;
+}
+
+.side-nav ul {
+  margin-left: 0 !important;
+}
+
+.side-nav li{
+  list-style: none outside none;
+}
+
+.side-nav ul li a {
+  color: #eee !important;
+  font-weight: bold;
+  display: block;
+  height: 50px;
+  line-height: 32px;
+  list-style: none outside none;
+  padding: 0 10px 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease 0s;
+}
+
+
+/* Slick Nav */
+
+.slicknav_menu {
+    display:none;
+}
+
+@media screen and (max-width: 46.87em) {
+    /* #menu is the original menu */
+    .js #menu {
+        display:none;
+    }
+
+    .js .slicknav_menu {
+        display:block;
+    }
+}
+
+
+/* footer */
+
+footer {
+  margin: 50px 0;
+  padding: 20px 0;
+  border-top: solid #DDDDDD 1px;
+}
