@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<!--     <title><%= content_for?(:title) ? yield(:title) : "Hinata" %></title> -->
     
     <title><%= full_title(yield(:title)) %></title>
 
@@ -17,7 +15,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body>  <!-- to disable turbolink (aka caching) add data-no-turbolink  to the body tag-->
     <div class="row full-width">
       <%= render "layouts/main_menu" %>
       

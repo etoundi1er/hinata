@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.foundation
 //= require foundation
+//= require jquery-ui
+//= require wice_grid
 //= require turbolinks
 //= require_tree .
 
