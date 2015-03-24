@@ -7,7 +7,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'foundation-rails'
 gem "font-awesome-rails"
-gem 'jquery-datatables-rails'
 gem 'will_paginate'
 gem 'simple_calendar', '~> 1.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
