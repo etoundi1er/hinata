@@ -2,6 +2,7 @@
 @import "customs";
 @import "font-awesome";
 @import "slicknav";
+@import "scaffolds";
 /* Add imports of custom sass/scss files here */
 
 /*
@@ -20,7 +21,6 @@
  *= require_self
  *= require foundation_and_overrides
  *= require foundation
- *= require dataTables/jquery.dataTables.foundation
  *= require font-awesome
 
  */

@@ -2,8 +2,6 @@
   <h1>Listing Users</h1>
 </div>
 
-<p id="notice"><%= notice %></p>
-
 <table>
   <thead>
     <tr>
@@ -23,8 +21,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
+        <td><%= link_to user.first_name, user %></td>
+        <td><%= link_to user.last_name, user %></td>
         <td><%= user.username %></td>
         <td><%= user.date_of_birth %></td>
         <td><%= user.gender %></td>
@@ -32,13 +30,15 @@
         <td><%= user.city %></td>
         <td><%= user.email %></td>
         <td><%= user.phone %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', user, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_user_path(user), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @products %>
 
 <br>
 
