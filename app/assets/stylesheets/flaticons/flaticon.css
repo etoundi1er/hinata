@@ -1,0 +1,106 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticons/flaticon.eot");
+	src: url("flaticons/flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticons/flaticon.woff") format("woff"),
+	url("flaticons/flaticon.ttf") format("truetype"),
+	url("flaticons/flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: inherit;
+font-style: normal !important;
+margin-left: 0.1em;
+}.flaticon-applicattion:before {
+	content: "\e000";
+}
+.flaticon-books19:before {
+	content: "\e001";
+}
+.flaticon-boy21:before {
+	content: "\e002";
+}
+.flaticon-business133:before {
+	content: "\e003";
+}
+.flaticon-calendar62:before {
+	content: "\e004";
+}
+.flaticon-csv3:before {
+	content: "\e005";
+}
+.flaticon-diploma11:before {
+	content: "\e006";
+}
+.flaticon-edit-text:before {
+	content: "\e007";
+}
+.flaticon-education31:before {
+	content: "\e008";
+}
+.flaticon-education36:before {
+	content: "\e009";
+}
+.flaticon-graduate20:before {
+	content: "\e00a";
+}
+.flaticon-home78:before {
+	content: "\e00b";
+}
+.flaticon-maths5:before {
+	content: "\e00c";
+}
+.flaticon-open182:before {
+	content: "\e00d";
+}
+.flaticon-organized:before {
+	content: "\e00e";
+}
+.flaticon-paper101:before {
+	content: "\e00f";
+}
+.flaticon-pdf25:before {
+	content: "\e010";
+}
+.flaticon-people:before {
+	content: "\e011";
+}
+.flaticon-persons8:before {
+	content: "\e012";
+}
+.flaticon-research1:before {
+	content: "\e013";
+}
+.flaticon-settings49:before {
+	content: "\e014";
+}
+.flaticon-talk8:before {
+	content: "\e015";
+}
+.flaticon-teacher17:before {
+	content: "\e016";
+}
+.flaticon-telephone37:before {
+	content: "\e017";
+}
+.flaticon-tests:before {
+	content: "\e018";
+}
+.flaticon-text87:before {
+	content: "\e019";
+}
+.flaticon-verification25:before {
+	content: "\e01a";
+}
+.flaticon-verified9:before {
+	content: "\e01b";
+}
+.flaticon-write12:before {
+	content: "\e01c";
+}
+.flaticon-writing11:before {
+	content: "\e01d";
+}

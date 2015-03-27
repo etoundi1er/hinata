@@ -4,7 +4,7 @@
 /* General settings */
 
 body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+/*     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important; */
     background: #007BB8;
     padding: 0;
     height:100%;
@@ -110,15 +110,34 @@ ul, ol, dl {
     display:none;
 }
 
-@media screen and (max-width: 46.87em) {
-    /* #menu is the original menu */
-    .js #menu {
-        display:none;
-    }
+/* Content Nav Tabs */
 
-    .js .slicknav_menu {
-        display:block;
-    }
+.tabs {
+  margin: -15px 0 10px 0 !important;
+}
+
+.tabs dd > a, .tabs .tab-title > a {
+  outline: none;
+  display: block;
+  background-color: #EFEFEF;
+  color: #222222;
+  padding: 0.4rem 0.5rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1rem;
+  border-right: #FFF solid 3px;
+  border-bottom: #FFF solid 3px;
+}
+
+
+@media screen and (max-width: 46.87em) {
+  /* #menu is the original menu */
+  .js #menu {
+      display:none;
+  }
+
+  .js .slicknav_menu {
+      display:block;
+  }
 }
 
 
