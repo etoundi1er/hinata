@@ -114,6 +114,14 @@ ul, ol, dl {
 
 .tabs {
   margin: -15px 0 10px 0 !important;
+  dd, .current {
+    margin-top: 6px !important;
+    > span {
+      font-size: 1rem;
+      padding: 0.4rem 0.5rem;
+      color: #000;
+    }
+  }
 }
 
 .tabs dd > a, .tabs .tab-title > a {
@@ -127,6 +135,12 @@ ul, ol, dl {
   border-right: #FFF solid 3px;
   border-bottom: #FFF solid 3px;
 }
+
+.tabs dd.current > a, .tabs .tab-title.current > a {
+  background-color: red;
+  color: #000;
+}
+
 
 
 @media screen and (max-width: 46.87em) {

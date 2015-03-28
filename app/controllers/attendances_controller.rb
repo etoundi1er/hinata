@@ -1,5 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
+  set_tab :attendances
 
   # GET /attendances
   # GET /attendances.json
