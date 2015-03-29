@@ -35,6 +35,14 @@
     <%= f.label :occupation %><br>
     <%= f.text_field :occupation %>
   </div>
+
+  <div class="field">
+    <%= f.label :children %><br>
+    <!-- Reference   http://stackoverflow.com/questions/8826407/rails-3-multiple-select-with-has-many-through-associations. If for doesn't save the data, then check params in controller and set to something_ids: []  
+                     Checkout RailsCasts on dynamic forms -->
+    <%= f.select :student_ids, Student.all.collect {|student| [student.full_name, student.id]}, {}, :multiple => true %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

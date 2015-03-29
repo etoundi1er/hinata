@@ -30,5 +30,10 @@
   <%= @guardian.occupation %>
 </p>
 
+<p>
+  <strong>Children:</strong>
+  <%= @guardian.students.map{ |student| student.full_name }.join(', ') %>
+</p>
+
 <%= link_to 'Edit', edit_guardian_path(@guardian) %> |
 <%= link_to 'Back', guardians_path %>

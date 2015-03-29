@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319131200) do
+ActiveRecord::Schema.define(version: 20150329223621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 20150319131200) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "family_members", force: :cascade do |t|
+    t.integer  "guardian_id"
+    t.integer  "student_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "family_members", ["guardian_id"], name: "index_family_members_on_guardian_id", using: :btree
+  add_index "family_members", ["student_id"], name: "index_family_members_on_student_id", using: :btree
+
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
     t.string   "group_code"
@@ -89,7 +99,6 @@ ActiveRecord::Schema.define(version: 20150319131200) do
     t.boolean  "is_active",       default: true
     t.boolean  "is_deleted",      default: false
     t.binary   "photo_data"
-    t.integer  "guardian_id"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
@@ -108,4 +117,6 @@ ActiveRecord::Schema.define(version: 20150319131200) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "family_members", "guardians"
+  add_foreign_key "family_members", "students"
 end
