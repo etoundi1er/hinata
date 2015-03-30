@@ -51,13 +51,13 @@
     <%= f.label :enrollment_date %><br>
     <%= f.date_select :enrollment_date %>
   </div>
+
   <div class="field">
-    <%= f.label :guardian %><br>
-    <!-- Reference   http://stackoverflow.com/questions/8826407/rails-3-multiple-select-with-has-many-through-associations 
-                     Checkout RailsCasts on dynamic forms -->
-    <%= f.select :guardian_ids, Guardian.all.collect {|g| [g.full_name, g.id]}, {}, :multiple => true %>
+    <%= f.label :parents %><br>
+    <%= f.collection_select :guardian_ids, Guardian.order(:last_name), :id, :full_name, {}, {multiple: true} %>
   </div>
-  <div class="field">
+
+<div class="field">
     <%= f.label :address_line %><br>
     <%= f.text_field :address_line %>
   </div>

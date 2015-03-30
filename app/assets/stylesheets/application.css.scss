@@ -2,6 +2,7 @@
 @import "customs";
 @import "font-awesome";
 @import "slicknav";
+@import "chosen";
 @import "responsive-tables";
 @import "scaffolds";
 @import "flaticons/flaticon"
@@ -23,6 +24,7 @@
  *= require foundation_and_overrides
  *= require foundation
  *= require font-awesome
+ *= require chosen
  *= require jquery-ui
  *= require jquery-ui/datepicker
  *= require_tree .

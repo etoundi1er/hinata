@@ -16,6 +16,8 @@ gem 'simple_calendar', '~> 1.1.0'
 gem "wice_grid", '3.4.2'
 gem 'jquery-ui-rails'
 
+# Chosen plugin makes it easy to turn a many-to-many select menu into a searchable token field
+gem 'chosen-rails'
 #Tabs navigation with Tabs On Rails https://github.com/weppos/tabs_on_rails
 gem "tabs_on_rails", :git => "https://github.com/weppos/tabs_on_rails.git"
 

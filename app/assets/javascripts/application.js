@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery-ui
+//= require chosen-jquery
 //= require wice_grid
 //= require turbolinks
 //= require_tree .
