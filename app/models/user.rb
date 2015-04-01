@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   
   def full_name
-    "#{last_name} #{first_name}"
+    "#{last_name} #{first_name}".titleize
   end
   
 end

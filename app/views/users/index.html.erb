@@ -4,7 +4,7 @@
   <h1>Listing Users</h1>
 </div>
 
-<table class="responsive">
+<table class="responsive", width="100%">
   <thead>
     <tr>
       <th>First name</th>
@@ -32,7 +32,6 @@
         <td><%= user.city %></td>
         <td><%= user.email %></td>
         <td><%= user.phone %></td>
-        <td><%= link_to '', user, class: 'fa fa-eye' %></td>
         <td><%= link_to '', edit_user_path(user), class: 'fa fa-pencil-square-o' %></td>
         <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o' %></td>
       </tr>

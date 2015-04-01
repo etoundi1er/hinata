@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @guardian.full_name) %>
+
+<div class="page-title">
+  <h1><%= @guardian.full_name %></h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @guardian.name %>
+</p>
 
 <p>
   <strong>First name:</strong>
@@ -32,7 +41,7 @@
 
 <p>
   <strong>Children:</strong>
-  <%= @guardian.students.map{ |student| student.full_name }.join(', ') %>
+  <%= @guardian.students.map{ |student| link_to student.full_name, student }.join(', ').html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_guardian_path(@guardian) %> |

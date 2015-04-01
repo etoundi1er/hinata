@@ -1,0 +1,28 @@
+<% provide(:title, 'Course Categories') %>
+
+<div class="page-title">
+  <h1><%= 'Course Categories' %></h1>
+</div>
+
+<table class="responsive">
+  <thead>
+    <tr>
+      <th>Categories</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_categories.each do |course_category| %>
+      <tr>
+        <td><%= link_to course_category.cc_name, course_category %></td>
+        <td><%= link_to 'Edit', edit_course_category_path(course_category) %></td>
+        <td><%= link_to 'Destroy', course_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create a new category', new_course_category_path, class: "button radius" %>

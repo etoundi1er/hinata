@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Guardians Directory') %>
 
-<h1>Listing Guardians</h1>
+<div class="page-title">
+  <h1>Guardians Directory</h1>
+</div>
 
 <table>
   <thead>
@@ -17,14 +19,13 @@
   <tbody>
     <% @guardians.each do |guardian| %>
       <tr>
-        <td><%= guardian.full_name %></td>
+        <td><%= link_to guardian.full_name, guardian %></td>
         <td><%= guardian.phone %></td>
         <td><%= guardian.email %></td>
         <td><%= guardian.occupation %></td>
         <td><%= guardian.students.map{ |student| student.full_name }.join(', ') %></td>
-        <td><%= link_to 'Show', guardian %></td>
-        <td><%= link_to 'Edit', edit_guardian_path(guardian) %></td>
-        <td><%= link_to 'Destroy', guardian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', edit_guardian_path(guardian), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', guardian, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Guardian', new_guardian_path %>
+<%= link_to 'New Guardian', new_guardian_path, class:"button radius" %>

@@ -11,77 +11,116 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_birth %><br>
-    <%= f.date_select :date_of_birth %>
-  </div>
-  <div class="field">
-    <%= f.label :place_of_birth %><br>
-    <%= f.text_field :place_of_birth %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :group %><br>
-    <%= f.text_field :group %>
-  </div>
-  <div class="field">
-    <%= f.label :enrollment_date %><br>
-    <%= f.date_select :enrollment_date %>
-  </div>
+  <fieldset>
+    <legend>Personal Infos</legend>
 
-  <div class="field">
-    <%= f.label :parents %><br>
-    <%= f.collection_select :guardian_ids, Guardian.order(:last_name), :id, :full_name, {}, {multiple: true} %>
-  </div>
+    
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :date_of_birth %>
+          <%= f.text_field :date_of_birth, { class: "datepicker" } %>
+        </div>
+        
+        <div class="medium-4 columns">
+          <%= f.label :place_of_birth %>
+          <%= f.text_field :place_of_birth %>
+        </div>
+        
+        <div class="medium-4 columns">
+          <%= f.label :gender %>
+          <%= f.text_field :gender %>
+        </div>
+      </div>
+    
+  </fieldset>
 
-<div class="field">
-    <%= f.label :address_line %><br>
-    <%= f.text_field :address_line %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :is_active %><br>
-    <%= f.check_box :is_active %>
-  </div>
-  <div class="field">
-    <%= f.label :is_deleted %><br>
-    <%= f.check_box :is_deleted %>
-  </div>
-  <div class="field">
-    <%= f.label :photo_data %><br>
-    <%= f.text_field :photo_data %>
-  </div>
+  <fieldset>
+    <legend>Schools' infos</legend>
+
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :enrollment_date %>
+          <%= f.text_field :enrollment_date, { class: "datepicker" } %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :group %>
+          <%= f.collection_select :group_id, Group.all, :id, :group_name, {}, {class: "chosen-select", include_blank: true, multiple: false} %>
+        </div>
+      </div>
+    
+  </fieldset>
+
+  <fieldset>
+    <legend>Contact Details</legend>
+
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </div>
+        <div class="medium-8 columns">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :address_line %>
+          <%= f.text_field :address_line %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.label :country %>
+          <%= f.text_field :country %>
+        </div>
+       </div>
+    
+  </fieldset>
+
+  <fieldset>
+    <legend>Guardians</legend>
+
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :find_guardians %>
+          <%= f.collection_select :guardian_ids, Guardian.order(:last_name), :id, :full_name, {}, {class: "chosen-select", multiple: true} %>
+        </div>
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Additional</legend>
+
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :photo_data %>
+          <%= f.text_field :photo_data %>
+        </div>
+      </div>
+    
+  </fieldset>
+
   <div class="actions">
-    <%= f.submit class: "button radius" %>
+    <%= f.submit class: "button success radius" %>
   </div>
 <% end %>

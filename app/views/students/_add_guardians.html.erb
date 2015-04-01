@@ -1,0 +1,31 @@
+<%= fields_for :guardians do |g| %>
+  <div class="row">
+    <div class="medium-4 columns">
+      <%= g.label :first_name %>
+      <%= g.text_field :first_name %>
+    </div>
+    <div class="medium-4 columns">
+      <%= g.label :last_name %>
+      <%= g.text_field :last_name %>
+    </div>
+    <div class="medium-4 columns">
+      <%= g.label :relationship %>
+      <%= g.text_field :relation %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-4 columns">
+      <%= g.label :phone %>
+      <%= g.text_field :phone %>
+    </div>
+    <div class="medium-4 columns">
+      <%= g.label :email %>
+      <%= g.text_field :email %>
+    </div>
+    <div class="medium-4 columns">
+      <%= g.label :occupation %>
+      <%= g.text_field :occupation %>
+    </div>
+  </div>
+<% end %>

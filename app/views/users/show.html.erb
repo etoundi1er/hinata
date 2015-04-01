@@ -1,55 +1,25 @@
-<% provide(:title, @user.full_name.titleize) %>
+<% provide(:title, @user.full_name) %>
 
 <div class="page-title">
-  <h1><%= @user.full_name.titleize %></h1>
+  <h1><%= @user.full_name %></h1>
 </div>
 
 <%= render 'tabs' %>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Date of birth:</strong>
-  <%= @user.date_of_birth %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Address line:</strong>
-  <%= @user.address_line %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <%= render 'bio' %>
+  </div>
+  <div class="content" id="panel2">
+    <%= render 'form' %>
+  </div>
+  <div class="content" id="panel3">
+    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel4">
+    <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

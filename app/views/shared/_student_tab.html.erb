@@ -2,6 +2,8 @@
 <!--  using .html_safe method to embbed HTML within link_to. http://stackoverflow.com/a/9401988/3334827  -->
   <%= tab.students '<i class="flaticon-home78"></i>&nbsp;<span class="hidden-for-small-only"> Students</span>'.html_safe, 
                     students_path, class: "tab-title" %>
-<%= tab.attendances '<i class="flaticon-verified9"></i>&nbsp;<span class="hidden-for-small-only"> Attendances</span>'.html_safe, 
+  <%= tab.attendances '<i class="flaticon-verified9"></i>&nbsp;<span class="hidden-for-small-only"> Attendances</span>'.html_safe, 
     attendances_path, class: "tab-title" %>
+<%= tab.guardians '<i class="flaticon-verified9"></i>&nbsp;<span class="hidden-for-small-only"> Guardians</span>'.html_safe, 
+  students_path, class: "tab-title" %>
 <% end %>

@@ -2,7 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  $('#student_guardian_ids').chosen
+  $('.chosen-select').chosen
     allow_single_deselect: true
     no_results_text: 'No results matched'
-    width: '200px'
+    
+#   For Foundation DatePicker
+#   $('.fdatepicker').fdatetimepicker
+  
+  $('.datepicker').datepicker
+    changeMonth: true
+    changeYear: true
+    dateFormat: "yy-mm-dd"
+    showButtonPanel: true
+

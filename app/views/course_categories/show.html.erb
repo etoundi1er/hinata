@@ -1,0 +1,14 @@
+<% provide(:title, @course_category.cc_name) %>
+
+<div class="page-title">
+  <h1><%= @course_category.cc_name %> <span><%= link_to 'Edit', edit_course_category_path(@course_category) %> | <%= link_to 'View all', course_categories_path %></span></h1>
+</div>
+
+  <% @course_category.courses.each do |course| %>
+    <p><%= link_to course.course_name, course %></p>
+  <% end %>
+
+<div>
+  <%= link_to 'Create new category', new_course_category_path, class: "button success tiny radius" %> &nbsp;&nbsp;
+  <%= link_to 'Delete this category', @course_category,  class: "button alert tiny radius", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

@@ -11,39 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :relation %><br>
-    <%= f.text_field :relation %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :occupation %><br>
-    <%= f.text_field :occupation %>
-  </div>
 
-  <div class="field">
-    <%= f.label :children %><br>
-    <!-- Reference   http://stackoverflow.com/questions/8826407/rails-3-multiple-select-with-has-many-through-associations. If for doesn't save the data, then check params in controller and set to something_ids: []  
-                     Checkout RailsCasts on dynamic forms -->
-    <%= f.select :student_ids, Student.all.collect {|student| [student.full_name, student.id]}, {}, :multiple => true %>
-  </div>
+  <fieldset>
+    <legend>Personal infos</legend>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+        <div class="medium-4 columns">
+          <%= f.label :occupation %>
+          <%= f.text_field :occupation %>
+        </div>
+      </div>
+    
+  </fieldset>
+
+  <fieldset>
+    <legend>Personal infos</legend>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.label :students %>
+          <%= f.collection_select :student_ids, Student.all, :id, :full_name, {}, {class: "chosen-select", multiple: true} %>
+        </div>
+      </div>
+    <br>
+      <div class="row">
+        <div class="medium-4 columns">
+          <%= f.label :relationship_to_student %>
+          <%= f.text_field :relation %>
+        </div>
+      </div>
+    
+  </fieldset>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:"button success radius" %>
   </div>
 <% end %>

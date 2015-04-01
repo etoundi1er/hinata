@@ -1,89 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @student.full_name) %>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
+<div class="page-title">
+  <h1><%= @student.full_name %><span><%= link_to 'Edit', edit_student_path(@student) %>  | <%= link_to 'View all students', students_path %></span></h1>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+<%= render 'shared/student_tab' %>
 
-<p>
-  <strong>Username:</strong>
-  <%= @student.username %>
-</p>
+<%= render 'student_bio' %>
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @student.date_of_birth %>
-</p>
-
-<p>
-  <strong>Place of birth:</strong>
-  <%= @student.place_of_birth %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @student.gender %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @student.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Group:</strong>
-  <%= @student.group %>
-</p>
-
-<p>
-  <strong>Enrollment date:</strong>
-  <%= @student.enrollment_date %>
-</p>
-
-<p>
-  <strong>Guardian:</strong>
-  <%= @student.guardians.map{ |guardian| guardian.full_name }.join(', ') %>
-</p>
-
-<p>
-  <strong>Address line:</strong>
-  <%= @student.address_line %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @student.city %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @student.country %>
-</p>
-
-<p>
-  <strong>Is active:</strong>
-  <%= @student.is_active %>
-</p>
-
-<p>
-  <strong>Is deleted:</strong>
-  <%= @student.is_deleted %>
-</p>
-
-<p>
-  <strong>Photo data:</strong>
-  <%= @student.photo_data %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div>
+  <%= link_to 'Delete Student', @student,  class: "button alert tiny radius", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

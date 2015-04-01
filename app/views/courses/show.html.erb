@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @course.course_name) %>
 
-<p>
-  <strong>Course name:</strong>
-  <%= @course.course_name %>
-</p>
+<div class="page-title">
+  <h1><%= @course.course_name %> <span><%= link_to 'Edit', edit_course_path(@course) %>  | 
+    <%= link_to 'View all courses', courses_path %></span></h1>
+</div>
 
 <p>
   <strong>Course code:</strong>
@@ -12,13 +12,12 @@
 
 <p>
   <strong>Group:</strong>
-  <%= @course.group_id %>
+  <%= link_to @course.group.group_name, @course.group %>
 </p>
 
 <p>
   <strong>Course category:</strong>
-  <%= @course.course_category %>
+  <%= link_to @course.course_category.cc_name, @course.course_category %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+

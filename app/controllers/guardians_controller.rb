@@ -4,7 +4,7 @@ class GuardiansController < ApplicationController
   # GET /guardians
   # GET /guardians.json
   def index
-    @guardians = Guardian.all
+    @guardians = Guardian.order(:last_name)
   end
 
   # GET /guardians/1
@@ -69,6 +69,6 @@ class GuardiansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guardian_params
-      params.require(:guardian).permit(:first_name, :last_name, :relation, :phone, :email, :occupation, student_ids: [])
+      params.require(:guardian).permit(:name, :first_name, :last_name, :relation, :phone, :email, :occupation, student_ids: [])
     end
 end

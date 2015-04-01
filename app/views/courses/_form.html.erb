@@ -11,23 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :course_name %><br>
-    <%= f.text_field :course_name %>
-  </div>
-  <div class="field">
-    <%= f.label :course_code %><br>
-    <%= f.text_field :course_code %>
-  </div>
-  <div class="field">
-    <%= f.label :group_id %><br>
-    <%= f.number_field :group_id %>
-  </div>
-  <div class="field">
-    <%= f.label :course_category %><br>
-    <%= f.text_field :course_category %>
-  </div>
+  <fieldset>
+    
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.label :course_name %>
+          <%= f.text_field :course_name %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.label :course_code %>
+          <%= f.text_field :course_code %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.label :course_category_id %>
+          <%= f.collection_select :course_category_id, CourseCategory.all, :id, :cc_name, {}, {class: "chosen-select", include_blank: true, multiple: false} %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.label :group_id %>
+          <%= f.collection_select :group_id, Group.all, :id, :group_name, {}, {class: "chosen-select", include_blank: true, multiple: false} %>
+        </div>
+      </div>
+    
+  </fieldset>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button success radius" %>
   </div>
 <% end %>

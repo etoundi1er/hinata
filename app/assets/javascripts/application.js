@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require foundation-datetimepicker
 //= require jquery-ui
+//= require jquery-ui/datepicker
 //= require chosen-jquery
 //= require wice_grid
 //= require turbolinks

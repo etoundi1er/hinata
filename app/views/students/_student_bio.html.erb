@@ -1,0 +1,95 @@
+<div class="row">
+  <div class="medium-4 columns">
+     <div class="panel" >
+      <p>
+        <strong>First name:</strong>
+        <%= @student.first_name %>
+      </p>
+
+      <p>
+        <strong>Last name:</strong>
+        <%= @student.last_name %>
+      </p>
+
+      <p>
+        <strong>Username:</strong>
+        <%= @student.username %>
+      </p>
+
+      <p>
+        <strong>Date of birth:</strong>
+        <%= @student.date_of_birth %>
+      </p>
+
+      <p>
+        <strong>Place of birth:</strong>
+        <%= @student.place_of_birth %>
+      </p>
+
+      <p>
+        <strong>Gender:</strong>
+        <%= @student.gender %>
+      </p>
+    </div>
+  </div>
+  
+  <div class="medium-4 columns">
+    <div class="panel">
+      <p>
+        <strong>Class:</strong>
+        <%= link_to @student.group.group_name, @student.group %>
+      </p>
+
+      <p>
+        <strong>Enrollment date:</strong>
+        <%= @student.enrollment_date %>
+      </p>
+
+      <p>
+        <strong>Is active:</strong>
+        <%= @student.is_active %>
+      </p>
+
+      <p>
+        <strong>Photo data:</strong>
+        <%= @student.photo_data %>
+      </p>
+    </div>
+    
+    <div class="panel">
+      <p>
+        <strong>Guardian:</strong>
+        <%= @student.guardians.map{ |guardian| link_to guardian.full_name, guardian }.join(', ').html_safe %>
+      </p>
+    </div>
+  </div>
+  
+  <div class="medium-4 columns">
+    <div class="panel">
+      <p>
+        <strong>Phone:</strong>
+        <%= @student.phone %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @student.email %>
+      </p>
+
+      <p>
+        <strong>Address line:</strong>
+        <%= @student.address_line %>
+      </p>
+
+      <p>
+        <strong>City:</strong>
+        <%= @student.city %>
+      </p>
+
+      <p>
+        <strong>Country:</strong>
+        <%= @student.country %>
+      </p>
+    </div>
+  </div>
+</div>

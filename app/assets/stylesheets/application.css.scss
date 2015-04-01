@@ -1,8 +1,11 @@
 @import "foundation_and_overrides";
+@import "foundation-datetimepicker";
 @import "customs";
 @import "font-awesome";
 @import "slicknav";
 @import "chosen";
+@import "melon.datepicker";
+@import "jquery-ui/datepicker";
 @import "responsive-tables";
 @import "scaffolds";
 @import "flaticons/flaticon"
@@ -21,12 +24,11 @@
  * file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
- *= require foundation
  *= require font-awesome
  *= require chosen
- *= require jquery-ui
  *= require jquery-ui/datepicker
+ *= require foundation_and_overrides
+ *= require foundation
  *= require_tree .
 
  */

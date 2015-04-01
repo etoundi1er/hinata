@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @group.group_name) %>
 
-<p>
-  <strong>Group name:</strong>
-  <%= @group.group_name %>
-</p>
+<div class="page-title">
+  <h1><%= @group.group_name %></h1>
+</div>
 
-<p>
-  <strong>Group code:</strong>
-  <%= @group.group_code %>
-</p>
+<%= render 'tabs' %>
 
-<p>
-  <strong>Room:</strong>
-  <%= @group.room %>
-</p>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <%= render 'overview' %>
+  </div>
+  <div class="content" id="panel2">
+    <%= render 'group_student_list' %>
+  </div>
+  <div class="content" id="panel3">
+    <p>Taking attendance will go here</p>
+  </div>
+  <div class="content" id="panel4">
+    <p>Course list coming soon.</p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
