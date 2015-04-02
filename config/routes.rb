@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :exam_categories
+
+  resources :exams
+
   resources :courses
   
   resources :course_categories

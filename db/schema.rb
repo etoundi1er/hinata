@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401180256) do
+ActiveRecord::Schema.define(version: 20150402125649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,25 @@ ActiveRecord::Schema.define(version: 20150401180256) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "exam_categories", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "exam_date"
+    t.integer  "exam_category_id"
+    t.integer  "course_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "exams", ["course_id"], name: "index_exams_on_course_id", using: :btree
+  add_index "exams", ["exam_category_id"], name: "index_exams_on_exam_category_id", using: :btree
 
   create_table "family_members", force: :cascade do |t|
     t.integer  "guardian_id"
@@ -140,6 +159,8 @@ ActiveRecord::Schema.define(version: 20150401180256) do
 
   add_foreign_key "courses", "course_categories"
   add_foreign_key "courses", "groups"
+  add_foreign_key "exams", "courses"
+  add_foreign_key "exams", "exam_categories"
   add_foreign_key "family_members", "guardians"
   add_foreign_key "family_members", "students"
   add_foreign_key "student_courses", "courses"
