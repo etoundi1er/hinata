@@ -1,4 +1,4 @@
-<%= form_for(@student) do |f| %>
+<%= form_for @student.with_blank_guardians do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -106,6 +106,45 @@
           <%= f.collection_select :guardian_ids, Guardian.order(:last_name), :id, :full_name, {}, {class: "chosen-select", multiple: true} %>
         </div>
       </div>
+      <br>
+      <p>Or Add a new guardian</p>
+      
+        <%= f.fields_for(:guardians) do |guardian_form| %>
+          <fieldset>
+            <legend>Guardian</legend>
+              <div class="row">
+                <div class="medium-4 columns">
+                  <%= guardian_form.label :first_name %>
+                  <%= guardian_form.text_field :first_name %>
+                </div>
+                <div class="medium-4 columns">
+                  <%= guardian_form.label :last_name %>
+                  <%= guardian_form.text_field :last_name %>
+                </div>
+                <div class="medium-4 columns">
+                  <%= guardian_form.label :relationship %>
+                  <%= guardian_form.text_field :relation %>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="medium-4 columns">
+                  <%= guardian_form.label :phone %>
+                  <%= guardian_form.text_field :phone %>
+                </div>
+                <div class="medium-4 columns">
+                  <%= guardian_form.label :email %>
+                  <%= guardian_form.text_field :email %>
+                </div>
+                <div class="medium-4 columns">
+                  <%= guardian_form.label :occupation %>
+                  <%= guardian_form.text_field :occupation %>
+                </div>
+              </div>
+          </fieldset>
+        <% end %>
+      
+    
   </fieldset>
 
   <fieldset>

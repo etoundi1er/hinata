@@ -1,6 +1,10 @@
-<h1>Editing Exam Category</h1>
+<% provide(:title, 'Exam Category') %>
+
+<div class="page-title">
+  <h1>Editing Exam Category</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @exam_category %> |
-<%= link_to 'Back', exam_categories_path %>
+<%= link_to 'Cancel', @exam_category, class: 'button secondary tiny radius' %> &nbsp; &nbsp;
+<%= link_to 'Destroy', @exam_category, class: 'right button alert tiny radius', method: :delete, data: { confirm: 'Are you sure?' } %>

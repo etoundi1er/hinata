@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    @student = Student.new(:guardians => [Guardian.new])
   end
 
   # GET /students/1/edit
@@ -70,6 +70,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :username, :date_of_birth, :place_of_birth, :gender, :phone, :email, :enrollment_date, :group_id, :address_line, :city, :country, :is_active, :photo_data, guardian_ids: [])
+      params.require(:student).permit(:first_name, :last_name, :username, :date_of_birth, :place_of_birth, :gender, :phone, :email, :enrollment_date, :group_id, :address_line, :city, :country, :is_active, :photo_data, guardian_ids: [], guardians_attributes: [:first_name, :last_name, :relation, :phone, :email, :occupation], family_members_attributes: [])
     end
 end

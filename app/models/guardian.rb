@@ -1,7 +1,8 @@
 class Guardian < ActiveRecord::Base
+  validates :last_name, :phone, presence: true
+  validates :phone, uniqueness: true
   has_many :family_members
   has_many :students, :through => :family_members
-  accepts_nested_attributes_for :students
   
   def full_name
     "#{last_name} #{first_name}".titleize

@@ -10,28 +10,45 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<fieldset>
+  <div class="row">
+    <div class="medium-6 columns">
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :exam_date %><br>
-    <%= f.date_select :exam_date %>
+  <div class="row">
+    <div class="medium-4 columns">
+      <div class="field">
+        <%= f.label :exam_date %>
+        <%= f.text_field :exam_date, class: 'datepicker' %>
+      </div>
+    </div>
+    <div class="medium-4 columns">
+      <div class="field">
+        <%= f.label :exam_category_id %>
+        <%= f.collection_select :exam_category_id, ExamCategory.all, :id, :title, {}, {class: "chosen-select", include_blank: true, multiple: false} %>
+      </div>
+    </div>
+    <div class="medium-4 columns">
+      <div class="field">
+        <%= f.label :course_id %>
+        <%= f.collection_select :course_id, Course.all, :id, :course_name, {}, {class: "chosen-select", include_blank: true, multiple: false} %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :exam_category_id %><br>
-    <%= f.text_field :exam_category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.text_field :course_id %>
-  </div>
+</fieldset>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button success tiny radius' %>
   </div>
 <% end %>

@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Exam Categories') %>
 
-<h1>Listing Exam Categories</h1>
+<div class="page-title">
+  <h1>Exam Categories</h1>
+</div>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th colspan="3"></th>
+      <th width="20%" colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @exam_categories.each do |exam_category| %>
       <tr>
-        <td><%= exam_category.title %></td>
-        <td><%= link_to 'Show', exam_category %></td>
+        <td><%= link_to exam_category.title, exam_category %></td>
         <td><%= link_to 'Edit', edit_exam_category_path(exam_category) %></td>
         <td><%= link_to 'Destroy', exam_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Exam category', new_exam_category_path %>
+<%= link_to 'New Exam category', new_exam_category_path, class: 'button tiny radius' %>

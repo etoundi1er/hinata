@@ -11,11 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
+  <fieldset>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  </fieldset>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button success tiny radius' %>
   </div>
 <% end %>

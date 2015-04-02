@@ -1,31 +1,31 @@
-<%= fields_for :guardians do |g| %>
+<%= fields_for :guardians do |guardian_form| %>
   <div class="row">
     <div class="medium-4 columns">
-      <%= g.label :first_name %>
-      <%= g.text_field :first_name %>
+      <%= guardian_form.label :first_name %>
+      <%= guardian_form.text_field :first_name %>
     </div>
     <div class="medium-4 columns">
-      <%= g.label :last_name %>
-      <%= g.text_field :last_name %>
+      <%= guardian_form.label :last_name %>
+      <%= guardian_form.text_field :last_name %>
     </div>
     <div class="medium-4 columns">
-      <%= g.label :relationship %>
-      <%= g.text_field :relation %>
+      <%= guardian_form.label :relationship %>
+      <%= guardian_form.text_field :relation %>
     </div>
   </div>
 
   <div class="row">
     <div class="medium-4 columns">
-      <%= g.label :phone %>
-      <%= g.text_field :phone %>
+      <%= guardian_form.label :phone %>
+      <%= guardian_form.text_field :phone %>
     </div>
     <div class="medium-4 columns">
-      <%= g.label :email %>
-      <%= g.text_field :email %>
+      <%= guardian_form.label :email %>
+      <%= guardian_form.text_field :email %>
     </div>
     <div class="medium-4 columns">
-      <%= g.label :occupation %>
-      <%= g.text_field :occupation %>
+      <%= guardian_form.label :occupation %>
+      <%= guardian_form.text_field :occupation %>
     </div>
   </div>
 <% end %>
