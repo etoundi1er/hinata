@@ -1,14 +1,23 @@
-<p>
-  <strong>Group name:</strong>
-  <%= @group.group_name %>
-</p>
+<div class="panel">
+  <h4>Summary</h4>
+  <hr>
+  <p>
+    <strong>Class Name:</strong>
+    <%= @group.group_name %>
+  </p>
 
-<p>
-  <strong>Group code:</strong>
-  <%= @group.group_code %>
-</p>
+  <p>
+    <strong>Class Code:</strong>
+    <%= @group.group_code %>
+  </p>
 
-<p>
-  <strong>Room:</strong>
-  <%= @group.room %>
-</p>
+  <p>
+    <strong>Room:</strong>
+    <%= @group.room %>
+  </p>
+
+  <p>
+    <strong>Number of students:</strong>
+    <%= @group.students.count %>
+  </p>
+</div>

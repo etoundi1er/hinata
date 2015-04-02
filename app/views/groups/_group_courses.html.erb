@@ -1,0 +1,5 @@
+<% @group.courses.each do |course| %>
+  <div class="panel">
+    <h5><%= link_to course.course_name, course %></h5>
+  </div>
+<% end %>

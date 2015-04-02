@@ -1,13 +1,31 @@
 <% provide(:title, @student.full_name) %>
 
 <div class="page-title">
-  <h1><%= @student.full_name %><span><%= link_to 'Edit', edit_student_path(@student) %>  | <%= link_to 'View all students', students_path %></span></h1>
+  <h1><%= @student.full_name %> - <%= link_to @student.group.group_code, @student.group %><span class="right"><%= link_to 'Edit', edit_student_path(@student) %>  | <%= link_to 'View all students', students_path %></span></h1>
 </div>
 
-<%= render 'shared/student_tab' %>
+<%= render 'student_tab' %>
 
-<%= render 'student_bio' %>
-
-<div>
-  <%= link_to 'Delete Student', @student,  class: "button alert tiny radius", method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <%= render 'overview' %>
+  </div>
+  <div class="content" id="panel2">
+    <%= render 'student_bio' %>
+  </div>
+  <div class="content" id="panel3">
+    <p>Attendance records</p>
+  </div>
+  <div class="content" id="panel4">
+    <%= render 'student_courses' %>
+  </div>
+  <div class="content" id="panel5">
+    <p>Students grades by exams</p>
+  </div>
+  <div class="content" id="panel6">
+    <p>Link to download PDF report cards</p>
+  </div>
+  <div class="content" id="panel7">
+    <p>All notes on a student</p>
+  </div>
 </div>

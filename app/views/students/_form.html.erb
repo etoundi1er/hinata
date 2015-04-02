@@ -121,6 +121,8 @@
   </fieldset>
 
   <div class="actions">
-    <%= f.submit class: "button success radius" %>
+    <%= f.submit class: "button success radius" %> &nbsp;&nbsp;
+    <%= link_to 'Cancel', @student,  class: "button secondary radius" %>
+    <%= link_to 'Delete Student', @student,  class: "right button alert tiny radius", method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>

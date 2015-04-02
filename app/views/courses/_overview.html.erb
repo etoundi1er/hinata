@@ -1,0 +1,25 @@
+<div class="medium-6 columns">
+  <div class="panel">
+    <h5>Course Overview</h5>
+    <hr>
+    <p>
+      <strong>Course code:</strong>
+      <%= @course.course_code %>
+    </p>
+
+    <p>
+      <strong>Group:</strong>
+      <%= link_to @course.group.group_name, @course.group %>
+    </p>
+
+    <p>
+      <strong>Course category:</strong>
+      <%= link_to @course.course_category.cc_name, @course.course_category %>
+    </p>
+    
+    <p>
+      <strong>Number of students:</strong>
+      <%= @course.group.students.count %>
+    </p>
+  </div>
+</div>

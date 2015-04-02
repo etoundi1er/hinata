@@ -6,7 +6,7 @@
   </thead>
 
   <tbody>
-    <% @group.students.each do |student| %>
+    <% @course.group.students.each do |student|  %>
       <tr>
         <td><%= link_to student.full_name, student %></td>
       </tr>

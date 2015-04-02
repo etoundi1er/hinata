@@ -1,6 +1,7 @@
-<h1>Editing Course Category</h1>
+<% provide(:title, 'Editing Course Category') %>
+
+<div class="page-title">
+  <h1><%= 'Editing Course Category' %></h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @course_category %> |
-<%= link_to 'Back', course_categories_path %>

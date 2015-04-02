@@ -1,23 +1,28 @@
 <% provide(:title, @course.course_name) %>
 
 <div class="page-title">
-  <h1><%= @course.course_name %> <span><%= link_to 'Edit', edit_course_path(@course) %>  | 
+  <h1><%= @course.course_name %> <span class="right"><%= link_to 'Edit', edit_course_path(@course) %>  | 
     <%= link_to 'View all courses', courses_path %></span></h1>
 </div>
 
-<p>
-  <strong>Course code:</strong>
-  <%= @course.course_code %>
-</p>
+<%= render 'course_tab' %>
 
-<p>
-  <strong>Group:</strong>
-  <%= link_to @course.group.group_name, @course.group %>
-</p>
-
-<p>
-  <strong>Course category:</strong>
-  <%= link_to @course.course_category.cc_name, @course.course_category %>
-</p>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <%= render 'overview' %>
+  </div>
+  <div class="content" id="panel2">
+    <%= render 'course_students' %>
+  </div>
+  <div class="content" id="panel3">
+    <p>Taking attendance will go here</p>
+  </div>
+  <div class="content" id="panel4">
+    <p>Course curriculum with chapters and lessons</p>
+  </div>
+  <div class="content" id="panel5">
+    <p>Exams and Grades Recording</p>
+  </div>
+</div>
 
 

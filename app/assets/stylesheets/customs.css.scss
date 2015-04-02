@@ -53,6 +53,11 @@ ul, ol, dl {
   font-size: 13px;
 }
 
+/* Tables */
+table {
+  width: 100%;
+}
+
 /* Forms */
 select {
   height: 100%;
@@ -170,6 +175,16 @@ fieldset {
   .js .slicknav_menu {
       display:block;
   }
+}
+
+
+/* Alert Boxes */
+
+.alert-box {
+  background-color: #838383;
+  border-color: #8B8B8B;
+  color: #FFFFFF;
+  margin: 0 -15px;
 }
 
 /* footer */

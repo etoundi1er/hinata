@@ -1,10 +1,11 @@
 <% provide(:title, @group.group_name) %>
 
 <div class="page-title">
-  <h1><%= @group.group_name %></h1>
+  <h1><%= @group.group_name %><span class="right"><%= link_to 'Edit', edit_group_path(@group) %> |
+    <%= link_to 'All Classes', groups_path %></span></h1>
 </div>
 
-<%= render 'tabs' %>
+<%= render 'group_tab' %>
 
 <div class="tabs-content">
   <div class="content active" id="panel1">
@@ -17,9 +18,6 @@
     <p>Taking attendance will go here</p>
   </div>
   <div class="content" id="panel4">
-    <p>Course list coming soon.</p>
+    <%= render 'group_courses' %>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
