@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 User.create!(first_name: 'Frank', last_name: 'Patrick', username: 'frankz.p', date_of_birth: '1990-12-10', gender: 'Male', phone: '111111111', address_line: "xyz xyz xyz")
 User.create!(first_name: 'John', last_name: 'Doe', username: 'jonhn.do', date_of_birth: '1990-12-10', gender: 'Male', phone: '121212121', address_line: "zyx zyx zyx")
 User.create!(first_name: 'Aldo', last_name: 'Moro', username: 'aldoz.m', date_of_birth: '1990-12-10', gender: 'Male', phone: '131313131', address_line: "zyx zyx zyx")
@@ -49,5 +40,3 @@ Guardian.create!(first_name: 'Andrea', last_name: 'Pirlo')
 Guardian.create!(first_name: 'Monica', last_name: 'Belucci')
 Guardian.create!(first_name: 'Halle', last_name: 'Berry')
 Guardian.create!(first_name: 'Lauren', last_name: 'Baccall')
-
-
