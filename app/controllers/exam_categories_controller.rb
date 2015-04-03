@@ -1,4 +1,5 @@
 class ExamCategoriesController < ApplicationController
+  before_filter :find_course
   before_action :set_exam_category, only: [:show, :edit, :update, :destroy]
 
   # GET /exam_categories
@@ -28,7 +29,7 @@ class ExamCategoriesController < ApplicationController
 
     respond_to do |format|
       if @exam_category.save
-        format.html { redirect_to @exam_category, notice: 'Exam category was successfully created.' }
+        format.html { redirect_to [@course, @exam_category], notice: 'Exam category was successfully created.' }
         format.json { render :show, status: :created, location: @exam_category }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ExamCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @exam_category.update(exam_category_params)
-        format.html { redirect_to @exam_category, notice: 'Exam category was successfully updated.' }
+        format.html { redirect_to [@course, @exam_category], notice: 'Exam category was successfully updated.' }
         format.json { render :show, status: :ok, location: @exam_category }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class ExamCategoriesController < ApplicationController
   def destroy
     @exam_category.destroy
     respond_to do |format|
-      format.html { redirect_to exam_categories_url, notice: 'Exam category was successfully destroyed.' }
+      format.html { redirect_to course_exam_categories_url, notice: 'Exam category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +71,9 @@ class ExamCategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_category_params
       params.require(:exam_category).permit(:title)
+    end
+  
+    def find_course
+      @course = Course.find(params[:course_id])
     end
 end

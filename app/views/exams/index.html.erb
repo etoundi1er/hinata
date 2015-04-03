@@ -1,7 +1,7 @@
 <% provide(:title, 'Editing Exam') %>
 
 <br>
-<h5>Exams List  <span class="right"><%= link_to 'Create New Exam', new_exam_path %></span></h5>
+<h5>Exams List  <span class="right"><%= link_to 'Create New Exam', new_course_exam_path %></span></h5>
 <br>
 
 <table>
@@ -16,9 +16,10 @@
   <tbody>
     <% @exams.each do |exam| %>
       <tr>
-        <td><%= link_to exam.title, exam %></td>
-        <td><%= link_to exam.exam_category.title, exam.exam_category %></td>
+        <td><%= link_to exam.title, [@course, exam] %></td>
+        <td><%= link_to exam.exam_category.title, [@course, @exam_category] %></td>
         <td><%= exam.exam_date %></td>
+        <td><%= link_to 'Delete', [@course, exam], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

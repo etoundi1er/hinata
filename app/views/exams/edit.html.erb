@@ -6,5 +6,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel', @exam, class: 'button secondary tiny radius' %>
-<%= link_to 'Delete Exam', @exam, class: 'right button alert tiny radius', method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Cancel', course_exam_path, class: 'button secondary tiny radius' %>
+<%= link_to 'Delete Exam', course_exam_url, class: 'right button alert tiny radius', method: :delete, data: { confirm: 'Are you sure?' } %>

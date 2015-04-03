@@ -1,7 +1,7 @@
 <% provide(:title, @exam.title) %>
 
 <br>
-<h5><%= @exam.title %> - <%= @exam.exam_category.title %> <span class="right"><%= link_to 'back', exams_path %></span></h5>
+<h5><%= @exam.title %> - <%= @exam.exam_category.title %> <span class="right"><%= link_to 'back', course_exams_path %></span></h5>
 <br>
 
 <%= render 'exams_tab' %>

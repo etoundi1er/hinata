@@ -6,5 +6,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel', @exam_category, class: 'button secondary tiny radius' %> &nbsp; &nbsp;
-<%= link_to 'Destroy', @exam_category, class: 'right button alert tiny radius', method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Cancel', [@course, @exam_category], class: 'button secondary tiny radius' %> &nbsp; &nbsp;
+<%= link_to 'Destroy', [@course, @exam_category], class: 'right button alert tiny radius', method: :delete, data: { confirm: 'Are you sure?' } %>

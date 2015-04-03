@@ -1,18 +1,6 @@
 Rails.application.routes.draw do
-  resources :grades
 
-  resources :exam_categories
-
-  resources :exams
-
-  resources :courses
   
-  resources :course_categories
-
-  resources :groups
-
-  resources :attendances
-
   resources :employees
 
   resources :guardians
@@ -20,6 +8,22 @@ Rails.application.routes.draw do
   resources :students
   
   resources :users
+  
+  resources :exam_categories
+  
+  resources :groups do
+    resources :attendances
+  end
+
+  resources :courses do 
+    resources :exam_categories
+    resources :exams do 
+        resources :grades
+    end
+  end
+  
+  resources :course_categories
+
   
   
 

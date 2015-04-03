@@ -1,7 +1,7 @@
 <% provide(:title, @exam_category.title) %>
 
 <div class="page-title clearfix">
-  <h1><%= @exam_category.title %><span class="right"><%= link_to 'Edit', edit_exam_category_path(@exam_category) %></span></h1>
+  <h1><%= @exam_category.title %><span class="right"><%= link_to 'Edit', edit_course_exam_category_path %></span></h1>
 </div>
 
 <table>
@@ -15,7 +15,7 @@
   <tbody>
     <% @exam_category.exams.each do |exam| %>
       <tr>
-        <td><%= link_to exam.title, exam %></td>
+        <td><%= link_to exam.title, [@course, exam] %></td>
         <td><%= exam.exam_date %></td>
       </tr>
     <% end %>
@@ -23,4 +23,4 @@
 </table>
 
 
-<%= link_to 'All Categories', exam_categories_path, class: 'button secondary tiny radius' %>
+<%= link_to 'All Categories', course_exam_categories_path, class: 'button secondary tiny radius' %>

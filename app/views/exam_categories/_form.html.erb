@@ -1,4 +1,4 @@
-<%= form_for(@exam_category) do |f| %>
+<%= form_for [@course, @exam_category] do |f| %>
   <% if @exam_category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exam_category.errors.count, "error") %> prohibited this exam_category from being saved:</h2>
