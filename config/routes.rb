@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :grades
+
   resources :exam_categories
 
   resources :exams

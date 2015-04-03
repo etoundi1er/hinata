@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402125649) do
+ActiveRecord::Schema.define(version: 20150402234315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,18 @@ ActiveRecord::Schema.define(version: 20150402125649) do
   add_index "family_members", ["guardian_id"], name: "index_family_members_on_guardian_id", using: :btree
   add_index "family_members", ["student_id"], name: "index_family_members_on_student_id", using: :btree
 
+  create_table "grades", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "exam_id"
+    t.integer  "score"
+    t.string   "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "grades", ["exam_id"], name: "index_grades_on_exam_id", using: :btree
+  add_index "grades", ["student_id"], name: "index_grades_on_student_id", using: :btree
+
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
     t.string   "group_code"
@@ -163,6 +175,8 @@ ActiveRecord::Schema.define(version: 20150402125649) do
   add_foreign_key "exams", "exam_categories"
   add_foreign_key "family_members", "guardians"
   add_foreign_key "family_members", "students"
+  add_foreign_key "grades", "exams"
+  add_foreign_key "grades", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
   add_foreign_key "students", "groups"
