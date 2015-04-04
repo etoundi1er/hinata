@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @grade %> |
-<%= link_to 'Back', grades_path %>
+<%= link_to 'Show', course_exam_grade_path(@course, @exam, @grade) %> |
+<%= link_to 'Back', course_exam_grades_path %>

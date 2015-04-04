@@ -15,14 +15,19 @@
 
   <tbody>
     <% @grades.each do |grade| %>
+    <% @course.group.students.each do |s| %>
       <tr>
-        <td><%= grade.student %></td>
-        <td><%= grade.exam %></td>
+<!-- #         <td><%= grade.student_id %></td> -->
+        <td>
+          <%= s.full_name %>
+        <% end %>
+        </td>
+        <td><%= grade.exam_id %></td>
         <td><%= grade.score %></td>
         <td><%= grade.feedback %></td>
-        <td><%= link_to 'Show', grade %></td>
-        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@course, @exam, grade] %></td>
+        <td><%= link_to 'Edit', [:edit, @course, @exam, grade ] %></td>
+        <td><%= link_to 'Destroy', [@course, @exam, grade], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Grade', new_grade_path %>
+<%= link_to 'New Grade', new_course_exam_grade_path %>

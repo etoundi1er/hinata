@@ -1,4 +1,6 @@
 class GradesController < ApplicationController
+  before_filter :find_course
+  before_filter :find_exam
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   # GET /grades
@@ -24,11 +26,11 @@ class GradesController < ApplicationController
   # POST /grades
   # POST /grades.json
   def create
-    @grade = Grade.new(grade_params)
+    @grade = find_exam.grades.new(grade_params)
 
     respond_to do |format|
       if @grade.save
-        format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
+        format.html { redirect_to [@course, @exam, @grade], notice: 'Grade was successfully created.' }
         format.json { render :show, status: :created, location: @grade }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class GradesController < ApplicationController
   def update
     respond_to do |format|
       if @grade.update(grade_params)
-        format.html { redirect_to @grade, notice: 'Grade was successfully updated.' }
+        format.html { redirect_to [@course, @exam, @grade], notice: 'Grade was successfully updated.' }
         format.json { render :show, status: :ok, location: @grade }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class GradesController < ApplicationController
   def destroy
     @grade.destroy
     respond_to do |format|
-      format.html { redirect_to grades_url, notice: 'Grade was successfully destroyed.' }
+      format.html { redirect_to course_exam_grades_url, notice: 'Grade was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +72,13 @@ class GradesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
       params.require(:grade).permit(:student_id, :exam_id, :score, :feedback)
+    end
+  
+    def find_course
+      @course = Course.find(params[:course_id])
+    end
+    
+    def find_exam
+      @exam = Exam.find(params[:exam_id])
     end
 end
