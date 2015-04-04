@@ -25,7 +25,7 @@
       <tr>
         <td><%= link_to user.first_name, user %></td>
         <td><%= link_to user.last_name, user %></td>
-        <td><%= user.username %></td>
+        <td><%= best_in_place user, :username %></td>
         <td><%= user.date_of_birth %></td>
         <td><%= user.gender %></td>
         <td><%= user.address_line %></td>

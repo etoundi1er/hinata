@@ -1,23 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Student:</strong>
-  <%= @grade.student %>
+  <%= @grade.student.full_name %>
 </p>
 
 <p>
   <strong>Exam:</strong>
-  <%= @grade.exam %>
+  <%= @grade.exam.title %>
 </p>
 
 <p>
   <strong>Score:</strong>
-  <%= @grade.score %>
+  <%= best_in_place [@course, @exam, @grade], :score %>
 </p>
 
 <p>
   <strong>Feedback:</strong>
-  <%= @grade.feedback %>
+  <%= best_in_place [@course, @exam, @grade], :feedback, :as => :input, :nil => "Click me to add content!" %>
 </p>
 
 <%= link_to 'Edit', [:edit, @course, @exam, @grade] %> |

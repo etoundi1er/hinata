@@ -1,11 +1,12 @@
 class GradesController < ApplicationController
-  before_filter :find_course
+  before_filter :find_course#, :find_exam, :find_group
   before_filter :find_exam
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   # GET /grades
   # GET /grades.json
   def index
+    @students = find_course.students.all
     @grades = Grade.all
   end
 
@@ -74,11 +75,16 @@ class GradesController < ApplicationController
       params.require(:grade).permit(:student_id, :exam_id, :score, :feedback)
     end
   
+#     def find_group
+#       @group = Group.find(params[:group_id])
+#     end
+  
     def find_course
       @course = Course.find(params[:course_id])
     end
     
     def find_exam
-      @exam = Exam.find(params[:exam_id])
+#       @course = Course.find(params[:course_id])
+      @exam = find_course.exams.find(params[:exam_id])
     end
 end

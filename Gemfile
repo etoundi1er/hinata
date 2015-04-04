@@ -12,8 +12,9 @@ gem 'will_paginate'
 # gem 'will_paginate'
 gem 'simple_calendar', '~> 1.1.0'
 # Pagination
- gem "kaminari"
+gem "kaminari"
 
+gem 'best_in_place', '~> 3.0.1' #in-place RestFul editing
 gem "wice_grid", '3.4.2'
 gem 'jquery-ui-rails'
 
