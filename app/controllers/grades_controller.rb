@@ -6,7 +6,7 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
-    @students = find_course.students.all
+#     @students = find_course.students.all
     @grades = Grade.all
   end
 
@@ -45,8 +45,8 @@ class GradesController < ApplicationController
   def update
     respond_to do |format|
       if @grade.update(grade_params)
-        format.html { redirect_to [@course, @exam, @grade], notice: 'Grade was successfully updated.' }
-        format.json { render :show, status: :ok, location: @grade }
+        format.html { redirect_to course_exam_grades_url, notice: 'Grade was successfully updated.' }
+        format.json { render :show, status: :ok, location: @grades }
       else
         format.html { render :edit }
         format.json { render json: @grade.errors, status: :unprocessable_entity }

@@ -16,13 +16,19 @@
   
   <p>
     <strong>Course:</strong>
-    <%= %>
+    <%=@exam.course.course_name %>
   </p>
 
   <p>
     <strong>Group:</strong>
-    <%=  %>
+    <%= @exam.course.group.group_name %>
   </p>
+  
+  <% @course.group.students.each do |student|  %>
+      <p>
+        <strong><%= link_to student.full_name, student %></strong>
+      </p>
+    <% end %>
 
 </div>
 
