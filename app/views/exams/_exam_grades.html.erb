@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Score</th>
+      <th>Feedback</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exam.grades.collect do |grade| %>
+      <tr>
+        <td><%= grade.student.full_name %></td>
+        <td><%= best_in_place grade, :score, :path => [@course, @exam, grade] %></td>
+        <td><%= best_in_place grade, :feedback, :path => [@course, @exam, grade], :as => :input, :nil => "Add feedback" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="panel callout radius">
+  <p>List of all students who should graded </p>
+  <% @course.group.students.each do |student|  %>
+    <p>
+      <strong> > <%= link_to student.full_name, student %></strong>
+    </p>
+  <% end %>
+</div>

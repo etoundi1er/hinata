@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Grades</h1>
+<br>
+<h5>Listing Grades</h5>
+<br>
 
 <table>
   <thead>
@@ -14,12 +14,12 @@
   </thead>
 
   <tbody>
-    <% @grades.each do |grade| %>
+    <% @grades.collect do |grade| %>
       <tr>
-        <td><%= grade.student_id %></td>
-        <td><%= grade.exam_id %></td>
-        <td><%= best_in_place grade, :score, :path => [@course, @exam, grade], :as => :input, :nil => "Click me to add content!" %></td>
-        <td><%= best_in_place grade, :feedback, :path => [@course, @exam, grade] %></td>
+        <td><%= grade.student.full_name %></td>
+        <td><%= grade.exam.title %></td>
+        <td><%= best_in_place grade, :score, :path => [@course, @exam, grade] %></td>
+        <td><%= best_in_place grade, :feedback, :path => [@course, @exam, grade], :as => :input, :nil => "Add feedback" %></td>
         <td><%= link_to 'Show', [@course, @exam, grade] %></td>
         <td><%= link_to 'Edit', [:edit, @course, @exam, grade ] %></td>
         <td><%= link_to 'Destroy', [@course, @exam, grade], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,28 +27,21 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% @grades.each do |grade| %>
-<% @course.group.students.each do |student| %>
-<div class="row">
-  <div class="small-3 columns">
-    <p><%= student.full_name %><p/>
+  
+  <br>
+  <div class="panel callout radius">
+    <p>List of all students who should graded if I only knew how to work that out </p>
+    <p>Group: <strong><%= @course.group.group_name %></strong></p>
+    <p>Course: <strong><%= @course.course_name %></strong></p>
+    
+    <% @course.group.students.each do |student|  %>
+      <p>
+        <strong> > <%= link_to student.full_name, student %></strong>
+      </p>
+    <% end %>
   </div>
-  <div class="small-3 columns">
-    <p><%= grade.exam_id %><p/>
-  </div>
-  <div class="small-3 columns">
-    <p><%= best_in_place grade, :score, :path => [@course, @exam, @grade], :as => :input, :nil => "Add grade" %><p/>
-  </div>
-  <div class="small-3 columns">
-    <p><%= best_in_place grade, :feedback, :path => [@course, @exam, @grade], :as => :input, :nil => "Add content!" %><p/>
-  </div>
-</div>
-<% end %>
-<% end %>
-
-<br>
-
+  
+  
+  <br>
 <%= link_to 'New Grade', new_course_exam_grade_path %>
+

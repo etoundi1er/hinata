@@ -15,10 +15,6 @@
     <%= f.label :student_id %><br>
     <%= f.collection_select :student_id, Student.all, :id, :full_name, {}, {class: "chosen-select", multiple: false} %>
   </div>
-<!--   <div class="field">
-#     <%= f.label :exam_id %><br>
-#     <%= f.text_field :exam_id %>
-  </div> -->
   <div class="field">
     <%= f.label :score %><br>
     <%= f.number_field :score %>
