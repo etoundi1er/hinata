@@ -8,7 +8,7 @@ class GradesController < ApplicationController
   def index
     @grades = find_exam.grades.all
   end
-
+  
   # GET /grades/1
   # GET /grades/1.json
   def show
