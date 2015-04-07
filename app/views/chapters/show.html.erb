@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<br>
+<h5><%= @chapter.chapter_title %> <span class="right secondary-text"><%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> | <%= link_to 'Back', course_chapters_path %></span></h5>
+<hr>
 
-<p>
-  <strong>Chapter title:</strong>
-  <%= @chapter.chapter_title %>
-</p>
-
-<p>
-  <strong>Chapter description:</strong>
+<p class="secondary-text">Starts: <strong><%= @chapter.chapter_start_date.to_time.strftime('%a %e %b %Y')%></strong> - 
+  Ends: <strong><%= @chapter.chapter_end_date.to_time.strftime('%a %e %b %Y') %></strong></p>
+  <p>
+  <strong>Chapter description:</strong><br>
   <%= @chapter.chapter_description %>
-</p>
+  </p>
+  
+<h6>LESSONS</h6>
+    <% @chapter.lessons.each do |lesson| %>
+      <div class="panel">
+        <h6><%= lesson.lesson_title %>
+          <span class="right secondary-text">
+            from: <%=lesson.lesson_start_date %> - 
+            to: <%= lesson.lesson_end_date %></span>
+        </h6>
+        <br>
+        <p><strong>Chapter description:</strong><br>
+        <%= lesson.lesson_description %></p>
+      </div>
+    <% end %>
 
-<p>
-  <strong>Chapter start date:</strong>
-  <%= @chapter.chapter_start_date %>
-</p>
 
-<p>
-  <strong>Chapter end date:</strong>
-  <%= @chapter.chapter_end_date %>
-</p>
-
-<p>
-  <strong>Curriculum:</strong>
-  <%= @chapter.curriculum_id %>
-</p>
-
-<%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> |
-<%= link_to 'Back', course_chapters_path %>
