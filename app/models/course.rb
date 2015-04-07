@@ -5,4 +5,5 @@ class Course < ActiveRecord::Base
   #   has_many   :students, :primary_key => :group_id, #I guess this isnt needed after all
 #   :foreign_key => :group_id
   has_many :exams
+  has_many :chapters
 end

@@ -18,7 +18,7 @@
       <tr>
         <td><%= grade.student.full_name %></td>
         <td><%= grade.exam.title %></td>
-        <td><%= best_in_place grade, :score, :path => [@course, @exam, grade] %></td>
+        <td><%= best_in_place grade, :score, :path => [@course, @exam, grade], :inner_class => "best_input" %></td>
         <td><%= best_in_place grade, :feedback, :path => [@course, @exam, grade], :as => :input, :nil => "Add feedback" %></td>
         <td><%= link_to 'Show', [@course, @exam, grade] %></td>
         <td><%= link_to 'Edit', [:edit, @course, @exam, grade ] %></td>

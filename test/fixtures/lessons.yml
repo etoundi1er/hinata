@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lesson_title: MyString
+  lesson_description: MyText
+  lesson_start_date: 2015-04-06
+  lesson_end_date: 2015-04-06
+  attachment: MyString
+  chapter_id: 
+
+two:
+  lesson_title: MyString
+  lesson_description: MyText
+  lesson_start_date: 2015-04-06
+  lesson_end_date: 2015-04-06
+  attachment: MyString
+  chapter_id: 

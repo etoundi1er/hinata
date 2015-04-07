@@ -1,0 +1,27 @@
+<%= form_for [@course, @curriculum] do |f| %>
+  <% if @curriculum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@curriculum.errors.count, "error") %> prohibited this curriculum from being saved:</h2>
+
+      <ul>
+      <% @curriculum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="medium-4 column">
+      <%= f.text_field :cur_title %>
+    </div>
+  </div>
+
+  <%= f.fields_for(:chapters) do |builder| %>
+    <%= render 'chapters', f: builder %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Update', class: 'button success tiny radius' %>
+  </div>
+<% end %>

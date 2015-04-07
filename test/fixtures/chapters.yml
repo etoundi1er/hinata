@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chapter_title: MyString
+  chapter_description: MyText
+  chapter_start_date: 2015-04-06
+  chapter_end_date: 2015-04-06
+  course_id: 
+
+two:
+  chapter_title: MyString
+  chapter_description: MyText
+  chapter_start_date: 2015-04-06
+  chapter_end_date: 2015-04-06
+  course_id: 

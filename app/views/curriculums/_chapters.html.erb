@@ -1,0 +1,32 @@
+ <fieldset>
+  <h5>Chapter</h5>
+  <hr>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.label :chapter_title %>
+      <%= f.text_field :chapter_title %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.label :starts %>
+      <%= f.text_field :chapter_start_date, { class: "datepicker" } %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.label :ends %>
+      <%= f.text_field :chapter_end_date, { class: "datepicker" } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :chapter_description %>
+      <%= f.text_area :chapter_description %>
+    </div>
+  </div>
+  <p>
+    <%= f.check_box :_destroy %>
+    <%= f.label :_destroy, "Remove Chapter" %>
+  </p>
+   
+   <%= f.fields_for(:lessons) do |builder| %>
+   <%= render 'lessons', f: builder %>
+  <% end %>
+</fieldset>

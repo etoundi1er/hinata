@@ -1,0 +1,19 @@
+<h5><%= @curriculum.cur_title %></h5>
+
+<% @curriculum.chapters.each do |chapter| %>
+  <div class="panel">
+    <ul>
+      <li>
+        <h6><%= chapter.chapter_title %></h6>
+        <ol class="list">
+          <% chapter.lessons.each do |lesson| %>
+          <li><%= lesson.lesson_title %></li>
+          <% end %>
+        </ol>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_course_curriculum_path(@course, @curriculum) %> |
+<%= link_to 'Back', course_curriculums_path %>

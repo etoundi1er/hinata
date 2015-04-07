@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405200639) do
+ActiveRecord::Schema.define(version: 20150406165053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20150405200639) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "chapters", force: :cascade do |t|
+    t.string   "chapter_title"
+    t.text     "chapter_description"
+    t.date     "chapter_start_date"
+    t.date     "chapter_end_date"
+    t.integer  "course_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "curriculum_id"
+  end
+
+  add_index "chapters", ["course_id"], name: "index_chapters_on_course_id", using: :btree
+  add_index "chapters", ["curriculum_id"], name: "index_chapters_on_curriculum_id", using: :btree
 
   create_table "course_categories", force: :cascade do |t|
     t.string   "cc_name"
@@ -44,6 +58,12 @@ ActiveRecord::Schema.define(version: 20150405200639) do
 
   add_index "courses", ["course_category_id"], name: "index_courses_on_course_category_id", using: :btree
   add_index "courses", ["group_id"], name: "index_courses_on_group_id", using: :btree
+
+  create_table "curriculums", force: :cascade do |t|
+    t.string   "cur_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
@@ -123,6 +143,19 @@ ActiveRecord::Schema.define(version: 20150405200639) do
     t.string   "name"
   end
 
+  create_table "lessons", force: :cascade do |t|
+    t.string   "lesson_title"
+    t.text     "lesson_description"
+    t.date     "lesson_start_date"
+    t.date     "lesson_end_date"
+    t.string   "attachment"
+    t.integer  "chapter_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "lessons", ["chapter_id"], name: "index_lessons_on_chapter_id", using: :btree
+
   create_table "student_courses", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "course_id"
@@ -169,6 +202,8 @@ ActiveRecord::Schema.define(version: 20150405200639) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "chapters", "courses"
+  add_foreign_key "chapters", "curriculums"
   add_foreign_key "courses", "course_categories"
   add_foreign_key "courses", "groups"
   add_foreign_key "exams", "courses"
@@ -177,6 +212,7 @@ ActiveRecord::Schema.define(version: 20150405200639) do
   add_foreign_key "family_members", "students"
   add_foreign_key "grades", "exams"
   add_foreign_key "grades", "students"
+  add_foreign_key "lessons", "chapters"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
   add_foreign_key "students", "groups"

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  
   resources :employees
 
   resources :guardians
@@ -16,6 +15,9 @@ Rails.application.routes.draw do
   end
 
   resources :courses do 
+    resources :curriculums
+    resources :chapters
+    resources :lessons
     resources :exam_categories
     resources :exams do 
         resources :grades

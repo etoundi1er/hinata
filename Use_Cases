@@ -80,3 +80,26 @@ Courses attributes (
 )
 
 
+CURRICULUM
+
+Chapters
+  chapter_title:string
+  chapter_description:text
+  chapter_start_date:date
+  chapter_end_date:date
+  course:references
+  has_many lessons
+  
+
+Lessons
+  lesson_title:string
+  lesson_description:text
+  lesson_start_date:date
+  lesson_end_date:date
+  attachment:string
+  chapter:references
+  
+  
+
+    
+

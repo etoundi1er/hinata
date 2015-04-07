@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chapter title:</strong>
+  <%= @chapter.chapter_title %>
+</p>
+
+<p>
+  <strong>Chapter description:</strong>
+  <%= @chapter.chapter_description %>
+</p>
+
+<p>
+  <strong>Chapter start date:</strong>
+  <%= @chapter.chapter_start_date %>
+</p>
+
+<p>
+  <strong>Chapter end date:</strong>
+  <%= @chapter.chapter_end_date %>
+</p>
+
+<p>
+  <strong>Curriculum:</strong>
+  <%= @chapter.curriculum_id %>
+</p>
+
+<%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> |
+<%= link_to 'Back', course_chapters_path %>

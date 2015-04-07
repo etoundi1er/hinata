@@ -1,0 +1,32 @@
+<div class="panel callout radius">
+  <h6>Lesson</h6>
+  <hr>
+  <div class="row">
+    <div class="medium-8 columns">
+        <%= f.label :lesson_title %>
+        <%= f.text_field :lesson_title %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.label :starts %>
+      <%= f.text_field :lesson_start_date, { class: "datepicker" } %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.label :ends %>
+      <%= f.text_field :lesson_end_date, { class: "datepicker" } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :lesson_description %>
+      <%= f.text_area :lesson_description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.label :attachment %>
+      <%= f.text_field :attachment %>
+    </div>
+  </div>
+  <%= f.check_box :_destroy %>
+   <%= f.label :_destroy, "Remove Lesson" %>
+</div>

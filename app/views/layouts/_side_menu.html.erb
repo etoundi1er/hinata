@@ -1,9 +1,9 @@
   <ul id="menu">
-    <li><a href="#" class="active"><i class="flaticon-home78"></i>&nbsp; Dashboard</a></li>
-    <li><a href="#"><i class="flaticon-people"></i>&nbsp; Students</a></li>
-    <li><a href="#"><i class="flaticon-teacher17"></i>&nbsp; Teachers</a></li>
-    <li><a href="#"><i class="flaticon-calendar62"></i>&nbsp; Calendar</a></li>
-    <li><a href="#"><i class="flaticon-maths5"></i>&nbsp; Courses</a></li>
-    <li><a href="#"><i class="flaticon-persons8"></i>&nbsp; Classes</a></li>
-    <li><h5 class="subheader"><small><a href="#"><i class="flaticon-settings49"></i>&nbsp; Settings</a></small></h5></li>
+    <li><%= link_to '<i class="flaticon-home78"></i>&nbsp; Dashboard'.html_safe, root_path %></li>
+    <li><%= link_to '<i class="flaticon-people"></i>&nbsp; Students'.html_safe, students_path %></li>
+    <li><%= link_to '<i class="flaticon-teacher17"></i>&nbsp; Teachers'.html_safe, employees_path %></li>
+    <li><%= link_to '<i class="flaticon-calendar62"></i>&nbsp; Calendar'.html_safe %></li>
+    <li><%= link_to '<i class="flaticon-maths5"></i>&nbsp; Classes'.html_safe, groups_path %></li>
+    <li><%= link_to '<i class="flaticon-persons8"></i>&nbsp; Courses'.html_safe, courses_path %></li>
+    <li><%= link_to '<i class="flaticon-settings49"></i>&nbsp; Settings'.html_safe %></li>
   </ul>
