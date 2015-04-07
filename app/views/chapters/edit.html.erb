@@ -4,5 +4,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', [@course, @chapter] %> |
-<%= link_to 'Back', course_chapters_path %>
+<%= link_to 'Cancel', [@course, @chapter], class: "button secondary radius" %> &nbsp;&nbsp;
+<%= link_to 'View Curriculum', course_chapters_path, class: "button secondary radius" %>

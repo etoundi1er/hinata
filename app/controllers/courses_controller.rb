@@ -5,6 +5,8 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+#     @chapters = Chapter.order(:created_at)
+#     @lessons = Lesson.all
   end
 
   # GET /courses/1
