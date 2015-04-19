@@ -15,14 +15,14 @@
     <![endif]-->
   </head>
 
-  <body data-no-turbolink>  <!-- to disable turbolink (aka caching) add data-no-turbolink  to the body tag-->
+  <body>  <!-- to disable turbolink (aka caching) add data-no-turbolink  to the body tag-->
     <div class="row full-width">
       <%= render "layouts/main_menu" %>
       
       <div class="medium-2 columns side-nav">
         <%= render "layouts/side_menu" %>
       </div>
-      <div class="medium-10 columns content-wrapper shadow">
+      <div class="medium-10 columns content-wrapper shadow" data-no-turbolink>
           <% flash.each do |key, value| %>
             <div data-alert class="alert-box alert-<%= key %>"><%= value %></div>
           <% end %>

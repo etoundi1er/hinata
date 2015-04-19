@@ -5,7 +5,7 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Chapter.order(:created_at)
+    @chapters = find_course.chapters.order(:created_at)
   end
 
   # GET /chapters/1
@@ -15,7 +15,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
-    @chapter = Chapter.new
+    @chapter = find_course.chapters.new
   end
 
   # GET /chapters/1/edit
@@ -25,7 +25,7 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
-    @chapter = Chapter.new(chapter_params)
+    @chapter = find_course.chapters.new(chapter_params)
 
     respond_to do |format|
       if @chapter.save
