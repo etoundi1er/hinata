@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  before_filter :find_group
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
   set_tab :attendances
 
@@ -65,11 +66,15 @@ class AttendancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
-      @attendance = Attendance.find(params[:id])
+      @attendance = find_group.attendances.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
       params.require(:attendance).permit(:student_id, :course_id, :group_id, :status, :taken_at, :employee_id)
+    end
+  
+    def find_group
+      @group = Group.find(params[:group_id])
     end
 end
