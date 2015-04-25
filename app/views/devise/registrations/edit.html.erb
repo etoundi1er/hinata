@@ -1,17 +1,9 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
 
-  <fieldset>
+<fieldset>
       <div class="row">
         <div class="medium-6 columns">
           <%= f.label :first_name %>
@@ -41,18 +33,27 @@
           <%= f.text_field :username, autofocus: true %>
         </div>
     </div>
+    
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+    
     <div class="row">
-      <div class="medium-6 columns">
-          <%= f.label :password %>
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %>
+        <div class="medium-6 columns">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="medium-6 columns">
+          <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
           <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-      <div class="medium-6 columns">
-          <%= f.label :password_confirmation %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+        </div>
     </div>
   </fieldset>
 
@@ -80,6 +81,12 @@
   </fieldset>
 
   <div class="actions">
-    <%= f.submit class: "button success radius" %>
+    <%= f.submit "Update" %>
   </div>
 <% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
