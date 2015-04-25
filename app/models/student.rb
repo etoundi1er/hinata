@@ -2,7 +2,7 @@ class Student < ActiveRecord::Base
   validates :first_name, :last_name, :username, :date_of_birth, :gender, :group_id, :enrollment_date, presence: true
   validates :username, uniqueness: true
  
-#   has_many :attendances
+  has_many :attendances
   belongs_to :group
   #   has_many   :students, :primary_key => :group_id, #and this too :/
   #                         :foreign_key => :group_id

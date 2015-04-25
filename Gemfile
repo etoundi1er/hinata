@@ -15,7 +15,7 @@ gem 'simple_calendar', '~> 1.1.0'
 gem "kaminari"
 
 gem 'best_in_place', '~> 3.0.1' #in-place RestFul editing
-gem "wice_grid", '3.4.2'
+# gem "wice_grid", '3.4.2'
 gem 'jquery-ui-rails'
 
 # Chosen plugin makes it easy to turn a many-to-many select menu into a searchable token field
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem "rails-erd"
 end
 
 group :production do
