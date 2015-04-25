@@ -58,6 +58,17 @@
   </fieldset>
 
   <fieldset>
+        <div class="row">
+          <% for role in Role.where(id: 1..4) %>
+          <div class="medium-6 columns">
+            <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+            <%= role.name %>
+          </div>
+          <% end %>
+    </div>
+  </fieldset>
+
+  <fieldset>
       <div class="row">
         <div class="medium-6 columns">
           <%= f.label :email %>

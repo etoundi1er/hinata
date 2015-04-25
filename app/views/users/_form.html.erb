@@ -42,19 +42,34 @@
         </div>
     </div>
     <div class="row">
-      <div class="medium-6 columns">
-          <%= f.label :password %>
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %>
-          <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-      <div class="medium-6 columns">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+      <% if @current_method == "new" %>
+        <div class="medium-6 columns">
+            <%= f.label :password %>
+            <% if @validatable %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <div class="medium-6 columns">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      <% end %>
     </div>
   </fieldset>
+
+
+  <fieldset>
+        <div class="row">
+          <% for role in Role.where(id: 1..4) %>
+          <div class="medium-6 columns">
+            <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+            <%= role.name %>
+          </div>
+          <% end %>
+    </div>
+  </fieldset>
+
 
   <fieldset>
       <div class="row">
