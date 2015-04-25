@@ -11,12 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
 //= require jquery-ui/datepicker
 //= require chosen-jquery
 //= require best_in_place
+
+$(function(){ $(document).foundation(); });
+
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+

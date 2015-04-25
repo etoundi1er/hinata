@@ -7,6 +7,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'foundation-rails'
 gem 'foundation-datetimepicker-rails'
+# Jquery-Turbolink to resolve conflicts between Turbolink and all other Gem using Jquery
+gem 'jquery-turbolinks'
+
 gem "font-awesome-rails"
 gem 'will_paginate'
 # gem 'will_paginate'
