@@ -18,9 +18,7 @@
 //= require chosen-jquery
 //= require best_in_place
 
-$(function(){ $(document).foundation(); });
-
 //= require turbolinks
 //= require_tree .
 
-
+$(function(){ $(document).foundation(); });
