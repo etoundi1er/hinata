@@ -1,0 +1,35 @@
+<% provide(:title, 'Welcome') %>
+
+<div class="page-title clearfix">
+  <h1>Welcome <%= current_user.full_name %></h1>
+</div>
+
+<div class="medium-6 columns">
+  <div class="panel">
+    <h4>My PROFILE</h4>
+    <hr>
+    <p><%= link_to 'View Profile', current_user %></p>
+    <p><%= link_to 'Update Profile', edit_user_registration_path %></p>
+  </div>
+</div>
+
+<div class="clearfix">
+<div class="medium-6 columns">
+  <div class="panel">
+    <h4>UPCOMING EVENTS</h4>
+    <hr>
+    <p>Shows a list a of upcaoming events related to the user.</p>
+    <p>It could be anything that goes within the school</p>
+    <p>and personal calendar.</p>
+  </div>
+</div>
+
+<div class="medium-6 columns">
+  <div class="panel">
+    <h4>ANNOUNCEMENTS</h4>
+    <hr>
+    <p>Add a list of notes related to the student</p>
+  </div>
+</div>
+  
+</div>

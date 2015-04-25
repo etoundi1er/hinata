@@ -12,8 +12,13 @@
       from: <%=chapter.chapter_start_date.to_time.strftime('%a %e %b %Y') %> - 
       to: <%= chapter.chapter_end_date.to_time.strftime('%a %e %b %Y') %></span>
   </h6>
-  <p class="right"><%= link_to 'Edit', edit_course_chapter_path(@course, chapter) %> | 
-    <%= link_to 'Remove', course_chapter_path(@course, chapter), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <p class="right">
+    <% if can? :update, @chapter %>
+      <%= link_to 'Edit', edit_course_chapter_path(@course, chapter) %> | 
+    <% end %>
+    <% if can? :destroy, @course %>
+      <%= link_to 'Remove', course_chapter_path(@course, chapter), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </p>
 </div>
 <% end %>

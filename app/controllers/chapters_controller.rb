@@ -1,6 +1,8 @@
 class ChaptersController < ApplicationController
+  load_and_authorize_resource :course
+  load_and_authorize_resource :chapter, :through => :course
   before_filter :find_course
-  before_action :set_chapter, only: [:show, :edit, :update, :destroy]
+#   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
 
   # GET /chapters
   # GET /chapters.json

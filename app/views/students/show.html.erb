@@ -1,7 +1,15 @@
 <% provide(:title, @student.full_name) %>
 
 <div class="page-title clearfix">
-  <h1><%= @student.full_name %> - <%= link_to @student.group.group_code, @student.group %><span class="right"><%= link_to 'Edit', edit_student_path(@student) %>  | <%= link_to 'View all students', students_path %></span></h1>
+  <h1><%= @student.full_name %> - 
+    <%= link_to @student.group.group_code, @student.group %>
+    <span class="right">
+      <% if can? :update, @student %>
+      <%= link_to 'Edit', edit_student_path(@student) %>  | 
+      <% end %>
+      <%= link_to 'View all students', students_path %>
+    </span>
+  </h1>
 </div>
 
 <%= render 'student_tab' %>

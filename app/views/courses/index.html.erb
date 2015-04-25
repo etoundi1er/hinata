@@ -18,8 +18,12 @@
       <tr>
         <td><%= link_to course.course_name, course %></td>
         <td><%= link_to course.group.group_name, course.group %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :update, @course %>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <% end %>
+        <% if can? :destroy, @student %>
+          <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
