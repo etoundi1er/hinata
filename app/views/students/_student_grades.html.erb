@@ -1,2 +1,22 @@
-<% @student.grades.each do |sg| %>
-  <div class="panel">
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Score</th>
+      <th>Feedback</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student.grades.each do |sg| %>
+      <tr>
+        <td><%= sg.exam.title %></td>
+        <td><strong><%= sg.score %></strong> /20</td>
+        <td><%= sg.feedback %></td>
+        <td><%= sg.exam.exam_category.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

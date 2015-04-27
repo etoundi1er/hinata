@@ -1,13 +1,11 @@
 class CoursesController < ApplicationController
   load_and_authorize_resource
-#   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
   def index
     @courses = Course.all
-#     @chapters = Chapter.order(:created_at)
-#     @lessons = Lesson.all
+    @exams = Exam.all
   end
 
   # GET /courses/1

@@ -1,6 +1,7 @@
 class GradesController < ApplicationController
   before_filter :find_course
   before_filter :find_exam
+  before_filter :find_students
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   # GET /grades
@@ -30,7 +31,7 @@ class GradesController < ApplicationController
 
     respond_to do |format|
       if @grade.save
-        format.html { redirect_to [@course, @exam, @grade], notice: 'Grade was successfully created.' }
+        format.html { redirect_to [@course, @exam], notice: 'Grade was successfully added.' }
         format.json { render :show, status: :created, location: @grade }
       else
         format.html { render :new }
@@ -44,7 +45,7 @@ class GradesController < ApplicationController
   def update
     respond_to do |format|
       if @grade.update(grade_params)
-        format.html { redirect_to course_exam_grades_url, notice: 'Grade was successfully updated.' }
+        format.html { redirect_to course_exam_url, notice: 'Grade was successfully updated.' }
         format.json { render :show, status: :ok, location: @grades }
       else
         format.html { render :edit }
@@ -78,6 +79,10 @@ class GradesController < ApplicationController
       @course = Course.find(params[:course_id])
     end
     
+    def find_students
+      @student = find_course.group.students
+    end
+  
     def find_exam
       @exam = find_course.exams.find(params[:exam_id])
     end

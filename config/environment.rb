@@ -6,12 +6,12 @@ Rails.application.initialize!
 
 # es added mail setup - https://devcenter.heroku.com/articles/sendgrid
 
-# ActionMailer::Base.delivery_method = :smtp
-# ActionMailer::Base.smtp_settings = {
-#    address: "smtp.gmail.com",
-#    port: 587,
-#    domain: "gmail.com",
-#    authentication: 'plain',
-#    user_name:      ENV["GMAIL_USERNAME"],
-#    password:       ENV["GMAIL_PASSWORD"]
-#  }
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+   address: "smtp.gmail.com",
+   port: 587,
+   domain: "gmail.com",
+   authentication: 'plain',
+   user_name:      ENV["GMAIL_USERNAME"],
+   password:       ENV["GMAIL_PASSWORD"]
+ }

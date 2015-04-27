@@ -1,3 +1,8 @@
+<h5>
+  <%= link_to '<i class="fa fa-plus"></i>&nbsp; Add Grade'.html_safe, new_course_exam_grade_path(@course, @exam, :grade) %>
+</h5>
+
+<br>
 <table>
   <thead>
     <tr>
@@ -17,6 +22,7 @@
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 <div class="panel callout radius">

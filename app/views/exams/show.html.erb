@@ -1,16 +1,16 @@
 <% provide(:title, @exam.title) %>
 
 <br>
-<h5><%= @exam.title %> - <%= @exam.exam_category.title %> <span class="right"><%= link_to 'back', course_exams_path %></span></h5>
+<h5><%= @exam.title %> - <%= @exam.exam_category.title %> <span class="right"><%= link_to '<i class="fa fa-arrow-left"></i>&nbsp; Back'.html_safe, course_path(@course, :anchor => 'exam') %></span></h5>
 <br>
 
 <%= render 'exams_tab' %>
 
 <div class="tabs-content">
   <div class="content active" id="panel1">
-    <%= render 'exam_details' %>
-  </div>
-  <div class="content" id="panel2">
     <%= render 'exam_grades' %>
+  </div>
+    <div class="content" id="panel2">
+    <%= render 'exam_details' %>
   </div>
 </div>

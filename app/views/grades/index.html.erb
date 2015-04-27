@@ -38,6 +38,9 @@
       <p>
         <strong> > <%= link_to student.full_name, student %></strong>
       </p>
+      <p>
+        <strong> > <%= student.grades.select(:score).inspect %></strong>
+      </p>
     <% end %>
   </div>
   

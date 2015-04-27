@@ -1,5 +1,10 @@
 <br>
-<h5><%= @chapter.chapter_title %> <span class="right secondary-text"><%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> | <%= link_to 'Back', course_chapters_path %></span></h5>
+<h5><%= @chapter.chapter_title %> 
+  <span class="right secondary-text">
+    <%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> | 
+    <%= link_to 'Back', course_path(@course, :anchor =>'panel3') %>
+  </span>
+</h5>
 <hr>
 
 <p class="secondary-text">Starts: <strong><%= @chapter.chapter_start_date.to_time.strftime('%a %e %b %Y')%></strong> - 

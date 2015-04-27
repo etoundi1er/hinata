@@ -1,7 +1,12 @@
 <% provide(:title, 'Editing Exam') %>
 
 <br>
-<h5>Exams List <span class="right"><%= link_to 'Add Exam', new_course_exam_path %></span></h5>
+<h5>Exams List 
+  <span class="right">
+    <%= link_to 'Add Exam', new_course_exam_path %> | 
+    <%= link_to 'Back', course_path(@course) %>
+  </span>
+</h5>
 <br>
 
 <table>

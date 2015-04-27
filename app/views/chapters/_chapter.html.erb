@@ -1,1 +1,25 @@
-<%= render :file => 'chapters/index.html.erb' %>
+<h5>Curriculum 
+  <span class="right">
+    <%= link_to '<i class="fa fa-plus"></i>&nbsp; Add Chapter'.html_safe, new_course_chapter_path(@course, @chapter) %>
+  </span>
+</h5>
+<br>
+
+<% @chapters.each do |chapter| %>
+<div class="panel clearfix">
+  <h6>
+    <%= link_to chapter.chapter_title, course_chapter_path(@course, chapter) %>
+    <span class="right secondary-text">
+      from: <%=chapter.chapter_start_date.to_time.strftime('%a %e %b %Y') %> - 
+      to: <%= chapter.chapter_end_date.to_time.strftime('%a %e %b %Y') %></span>
+  </h6>
+  <p class="right">
+    <% if can? :update, @chapter %>
+      <%= link_to 'Edit', edit_course_chapter_path(@course, chapter) %> | 
+    <% end %>
+    <% if can? :destroy, @course %>
+      <%= link_to 'Remove', course_chapter_path(@course, chapter), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </p>
+</div>
+<% end %>
