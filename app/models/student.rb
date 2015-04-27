@@ -7,7 +7,7 @@ class Student < ActiveRecord::Base
   #   has_many   :students, :primary_key => :group_id, #and this too :/
   #                         :foreign_key => :group_id
   has_many :grades
-  has_many :employees :through => :groups
+  has_many :employees, :through => :groups
   has_many :family_members
   has_many :guardians, :through => :family_members
   accepts_nested_attributes_for :guardians,
