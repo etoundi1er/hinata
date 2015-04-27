@@ -145,6 +145,16 @@ m_Lesson [label = <<table border="0" align="center" cellspacing="0.5" cellpaddin
   <tr><td align="left" width="130" port="lesson_title">lesson_title <font face="Arail Italic" color="grey60">string ∗</font></td></tr>
 </table>
 >];
+m_Role [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Role</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arail Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="resource_id">resource_id <font face="Arail Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="resource_type">resource_type <font face="Arail Italic" color="grey60">string</font></td></tr>
+</table>
+>];
 m_Student [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Student</font></td></tr>
 </table>
@@ -177,15 +187,25 @@ m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding=
 <table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
   <tr><td align="left" width="130" port="address_line">address_line <font face="Arail Italic" color="grey60">string</font></td></tr>
   <tr><td align="left" width="130" port="city">city <font face="Arail Italic" color="grey60">string</font></td></tr>
-  <tr><td align="left" width="130" port="date_of_birth">date_of_birth <font face="Arail Italic" color="grey60">date ∗</font></td></tr>
-  <tr><td align="left" width="130" port="email">email <font face="Arail Italic" color="grey60">string</font></td></tr>
-  <tr><td align="left" width="130" port="first_name">first_name <font face="Arail Italic" color="grey60">string ∗</font></td></tr>
-  <tr><td align="left" width="130" port="gender">gender <font face="Arail Italic" color="grey60">string ∗</font></td></tr>
-  <tr><td align="left" width="130" port="last_name">last_name <font face="Arail Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="current_sign_in_at">current_sign_in_at <font face="Arail Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="current_sign_in_ip">current_sign_in_ip <font face="Arail Italic" color="grey60">inet</font></td></tr>
+  <tr><td align="left" width="130" port="date_of_birth">date_of_birth <font face="Arail Italic" color="grey60">date</font></td></tr>
+  <tr><td align="left" width="130" port="email">email <font face="Arail Italic" color="grey60">string ∗ U</font></td></tr>
+  <tr><td align="left" width="130" port="encrypted_password">encrypted_password <font face="Arail Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="first_name">first_name <font face="Arail Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="gender">gender <font face="Arail Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="last_name">last_name <font face="Arail Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="last_sign_in_at">last_sign_in_at <font face="Arail Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="last_sign_in_ip">last_sign_in_ip <font face="Arail Italic" color="grey60">inet</font></td></tr>
   <tr><td align="left" width="130" port="phone">phone <font face="Arail Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="remember_created_at">remember_created_at <font face="Arail Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_sent_at">reset_password_sent_at <font face="Arail Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_token">reset_password_token <font face="Arail Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="sign_in_count">sign_in_count <font face="Arail Italic" color="grey60">integer ∗</font></td></tr>
   <tr><td align="left" width="130" port="username">username <font face="Arail Italic" color="grey60">string ∗ U</font></td></tr>
 </table>
 >];
+  m_Role -> m_User [arrowhead = "normal", arrowtail = "normal", weight = "2"];
   m_Curriculum -> m_Chapter [arrowhead = "normal", arrowtail = "none", weight = "2"];
   m_Course -> m_Chapter [arrowhead = "normal", arrowtail = "none", weight = "2"];
   m_Chapter -> m_Lesson [arrowhead = "normal", arrowtail = "none", weight = "2"];
