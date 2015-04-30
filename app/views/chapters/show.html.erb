@@ -17,14 +17,20 @@
 <h6>LESSONS</h6>
     <% @chapter.lessons.each do |lesson| %>
       <div class="panel">
-        <h6><%= lesson.lesson_title %>
+        <h6>
+          <span data-tooltip aria-haspopup="true" class="has-tip" title="Click to edit">
+          <%= best_in_place lesson, :lesson_title, :path => [@course, lesson], :as => :textarea %>
+          </span>
           <span class="right secondary-text">
             from: <%=lesson.lesson_start_date %> - 
             to: <%= lesson.lesson_end_date %></span>
         </h6>
         <br>
         <p><strong>Chapter description:</strong><br>
-        <%= lesson.lesson_description %></p>
+          <span data-tooltip aria-haspopup="true" title="Click to edit">
+            <%= best_in_place lesson, :lesson_description, :path => [@course, lesson], :as => :textarea, :nil => "Click here to add content!" %>
+          </span>
+        </p>
       </div>
     <% end %>
 

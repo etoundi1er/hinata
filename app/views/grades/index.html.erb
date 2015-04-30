@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @grades.collect do |grade| %>
+    <% @grades.each do |grade| %>
       <tr>
         <td><%= grade.student.full_name %></td>
         <td><%= grade.exam.title %></td>
@@ -23,6 +23,7 @@
         <td><%= link_to 'Show', [@course, @exam, grade] %></td>
         <td><%= link_to 'Edit', [:edit, @course, @exam, grade ] %></td>
         <td><%= link_to 'Destroy', [@course, @exam, grade], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>

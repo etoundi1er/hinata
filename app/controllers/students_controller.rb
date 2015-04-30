@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-#   before_action :set_student, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   set_tab :students
   
@@ -7,6 +6,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @student = Student.new(:guardians => [Guardian.new])
   end
 
   # GET /students/1

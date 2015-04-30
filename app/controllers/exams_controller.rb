@@ -6,6 +6,7 @@ class ExamsController < ApplicationController
   # GET /exams.json
   def index
     @exams = find_course.exams.all
+    @grade = find_course.exams.grades.new
   end
 
   # GET /exams/1

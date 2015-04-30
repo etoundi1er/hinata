@@ -4,12 +4,14 @@ class Student < ActiveRecord::Base
  
   has_many :attendances
   belongs_to :group
-  #   has_many   :students, :primary_key => :group_id, #and this too :/
-  #                         :foreign_key => :group_id
-  has_many :grades
-  has_many :employees, :through => :groups
+  has_many :courses
+#   delegate :courses, to: :group
+#   has_many :exams, through: :courses
+  has_many :grades #, through: :exams
+  
+  has_many :employees, through: :groups
   has_many :family_members
-  has_many :guardians, :through => :family_members
+  has_many :guardians, through: :family_members
   accepts_nested_attributes_for :guardians,
             :reject_if => lambda { |attrs|
                               attrs.all? { |key, value| value.blank? } 
@@ -18,6 +20,10 @@ class Student < ActiveRecord::Base
   def full_name
     "#{last_name} #{first_name}".titleize
   end
+  
+#   def courses
+#     group.courses
+#   end
   
   def with_blank_guardians(n = 1)
     n.times do

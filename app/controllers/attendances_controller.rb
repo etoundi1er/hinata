@@ -6,9 +6,21 @@ class AttendancesController < ApplicationController
   # GET /attendances
   # GET /attendances.json
   def index
-    @attendances = Attendance.all
-  end
+#     @students = find_group.students
+#     @attendances = Attendance.all
+    
+  if params["student_ids"].nil? 
+      @attendance = Attendance.create(params[:attendance])
 
+   else
+     params["student_ids"].each do |id|
+     @student = Student.find(id.to_i)
+     @attendance = @student.attendances.create(params[:attendance])
+     end
+   end
+
+  end
+  
   # GET /attendances/1
   # GET /attendances/1.json
   def show
