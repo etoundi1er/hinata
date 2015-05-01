@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# User.create!(first_name: 'Frank', last_name: 'Patrick', username: 'frankz.p', email: 'frank@mail.com', date_of_birth: '1990-12-10', gender: 'Male', phone: '111111111', address_line: "xyz xyz xyz")
+User.create!(first_name: 'Frank', last_name: 'Patrick', username: 'frankz.p', email: 'frank.etoundi@gmail.com', password: 'password1234', date_of_birth: '1990-12-10', gender: 'Male', phone: '0741233456', address_line: "xyz xyz xyz")
 # User.create!(first_name: 'John', last_name: 'Doe', username: 'jonhn.do', email: 'john@mail.com', date_of_birth: '1990-12-10', gender: 'Male', phone: '121212121', address_line: "zyx zyx zyx")
 # User.create!(first_name: 'Aldo', last_name: 'Moro', username: 'aldoz.m', email: 'aldo@mail.com', date_of_birth: '1990-12-10', gender: 'Male', phone: '131313131', address_line: "zyx zyx zyx")
 # User.create!(first_name: 'Paul', last_name: 'Biya', username: 'paula.b', email: 'paul@mail.com', date_of_birth: '1990-12-10', gender: 'Male', phone: '141414141', address_line: "zyx zyx zyx")
