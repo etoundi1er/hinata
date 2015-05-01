@@ -16,24 +16,16 @@
     <%= f.number_field :student_id %>
   </div>
   <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.number_field :course_id %>
-  </div>
-  <div class="field">
-    <%= f.label :group_id %><br>
-    <%= f.number_field :group_id %>
+    <%= f.label :attendance_register_id %><br>
+    <%= f.number_field :attendance_register_id %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.check_box :status %>
   </div>
   <div class="field">
-    <%= f.label :taken_at %><br>
-    <%= f.date_select :taken_at %>
-  </div>
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
   </div>
   <div class="actions">
     <%= f.submit %>

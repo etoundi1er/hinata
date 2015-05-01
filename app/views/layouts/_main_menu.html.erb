@@ -14,6 +14,7 @@
         <% if user_signed_in? %>
         <a href="#">Hi <strong><%= current_user.first_name %></strong></a>
           <ul class="dropdown">
+            <li><%= link_to 'My Profile', current_user %></li>
             <li><%= link_to 'Update Profile', edit_user_registration_path %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           </ul>
@@ -22,10 +23,5 @@
         <% end %>
       </li>
     </ul>
-
-    <!-- Left Nav Section -->
-<!-- <!--     <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul> -->
   </section>
 </nav>

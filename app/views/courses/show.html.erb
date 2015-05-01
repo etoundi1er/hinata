@@ -8,13 +8,13 @@
 <%= render 'course_tab' %>
 
 <div class="tabs-content">
-  <div class="content active" id="panel1">
+  <div class="content active" id="overview">
     <%= render 'overview' %>
   </div>
-  <div class="content" id="panel2">
+  <div class="content" id="students">
     <%= render 'course_students' %>
   </div>
-  <div class="content" id="panel3">
+  <div class="content" id="curriculum">
     <%= render 'course_curriculum', locals: {variable: @chapters} %>
   </div>
   <div class="content" id="exam">

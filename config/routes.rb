@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :roles
 
   devise_for :users
@@ -16,8 +17,11 @@ Rails.application.routes.draw do
   
   resources :exam_categories
   
+  resources :periods
+  
   resources :groups do
     resources :attendances
+    resources :attendance_registers
   end
 
   resources :courses do 

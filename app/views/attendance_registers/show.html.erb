@@ -1,0 +1,37 @@
+<% provide(:title, 'View Attendance Register') %>
+
+<div class="page-title">
+  <h1>
+    Attendance Register
+    <span class="right">
+      <%= link_to 'Edit', edit_group_attendance_register_path(@group, @attendance_register) %> |
+      <%= link_to 'Back', group_path(@group, :anchor => 'attendances') %>
+    </span>
+  </h1>
+</div>
+
+<h5>
+  <span class="secondary-text">Taken on:</span> <%= @attendance_register.created_at.strftime("%a %m %b") %> &nbsp;
+  <span class="secondary-text">during the:</span> <%= @attendance_register.period.period_title %>
+</h5>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Names</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendance_register.attendances.each do |att| %>
+      <tr>
+        <td><%= att.student.full_name %></td>
+        <td><%= att.show_status %></td>
+        <td><%= att.notes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

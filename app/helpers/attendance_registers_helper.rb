@@ -1,0 +1,2 @@
+module AttendanceRegistersHelper
+end

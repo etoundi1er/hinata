@@ -7,18 +7,7 @@ class AttendancesController < ApplicationController
   # GET /attendances.json
   def index
 #     @students = find_group.students
-#     @attendances = Attendance.all
-    
-  if params["student_ids"].nil? 
-      @attendance = Attendance.create(params[:attendance])
-
-   else
-     params["student_ids"].each do |id|
-     @student = Student.find(id.to_i)
-     @attendance = @student.attendances.create(params[:attendance])
-     end
-   end
-
+    @attendances = Attendance.all
   end
   
   # GET /attendances/1
@@ -42,7 +31,7 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
+        format.html { redirect_to [@group, @attendance], notice: 'Attendance was successfully created.' }
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new }
@@ -56,7 +45,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully updated.' }
+        format.html { redirect_to [@group, @attendance], notice: 'Attendance was successfully updated.' }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit }
@@ -70,7 +59,7 @@ class AttendancesController < ApplicationController
   def destroy
     @attendance.destroy
     respond_to do |format|
-      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
+      format.html { redirect_to group_attendances_url, notice: 'Attendance was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -78,12 +67,12 @@ class AttendancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
-      @attendance = find_group.attendances.find(params[:id])
+      @attendance = Attendance.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      params.require(:attendance).permit(:student_id, :course_id, :group_id, :status, :taken_at, :employee_id)
+      params.require(:attendance).permit(:student_id, :attendance_register_id, :status, :notes)
     end
   
     def find_group

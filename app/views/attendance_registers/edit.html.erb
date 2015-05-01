@@ -1,0 +1,14 @@
+<% provide(:title, 'Update Attendance Register') %>
+
+<div class="page-title">
+  <h1>
+    Update Attendance Register
+    <span class="right">
+      <%= link_to 'Show', [@group, @attendance_register] %> |
+      <%= link_to 'Back', :back || group_path(@group, :anchor => 'attendances') %>
+    </span>
+  </h1>
+</div>
+
+
+<%= render 'form' %>

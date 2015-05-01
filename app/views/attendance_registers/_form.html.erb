@@ -1,0 +1,55 @@
+<%= form_for [@group, @attendance_register] do |f| %>
+  <% if @attendance_register.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendance_register.errors.count, "error") %> prohibited this attendance_register from being saved:</h2>
+
+      <ul>
+      <% @attendance_register.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :period_id %>
+    <%= f.collection_select :period_id, Period.all, :id, :period_title, {}, {class: "chosen-select", include_blank: true, multiple: false} %>
+  </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Names</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= f.fields_for(:attendances) do |att| %>
+      <tr>
+        <td>
+          <%= att.label att.object.student.full_name %>
+          <%= att.hidden_field :student_id %></td>
+        <td>
+          <div class="switch small">
+            <%= att.check_box :status %>
+            <%= att.label :status %> 
+          </div>
+        </td>
+        <td><%= att.text_field :notes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+      
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

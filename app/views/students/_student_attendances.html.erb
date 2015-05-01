@@ -1,0 +1,22 @@
+
+<table class="responsive">
+  <thead>
+    <tr>
+      <th>Dates</th>
+      <th>Periods</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student.attendances.map do |att| %>
+      <tr>
+        <td><%= att.created_at.strftime("%a %m %b") %></td>
+        <td><%= att.attendance_register.period.period_title %></td>
+        <td><%= att.show_status %></td>
+        <td><%= att.notes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

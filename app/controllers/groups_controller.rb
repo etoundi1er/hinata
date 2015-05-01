@@ -11,6 +11,15 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
+    @attendance_registers = @group.attendance_registers.all
+    @attendance_register = AttendanceRegister.new
+    @group.students.each do |g|
+      @attendance_register.attendances << Attendance.new(:student => g)
+    end
+    
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /groups/new

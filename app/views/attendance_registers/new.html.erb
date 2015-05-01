@@ -1,0 +1,9 @@
+<h1>New Attendance Register</h1>
+
+<h5>
+  Class: <%= @group.group_name %>
+</h5>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', group_path(@group, :anchor => 'attendances') %>

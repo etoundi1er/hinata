@@ -5,15 +5,6 @@
   <%= @attendance.student_id %>
 </p>
 
-<p>
-  <strong>Course:</strong>
-  <%= @attendance.course_id %>
-</p>
-
-<p>
-  <strong>Group:</strong>
-  <%= @attendance.group_id %>
-</p>
 
 <p>
   <strong>Status:</strong>
@@ -21,14 +12,9 @@
 </p>
 
 <p>
-  <strong>Taken at:</strong>
-  <%= @attendance.taken_at %>
+  <strong>Notes:</strong>
+  <%= @attendance.notes %>
 </p>
 
-<p>
-  <strong>Employee:</strong>
-  <%= @attendance.employee_id %>
-</p>
-
-<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
-<%= link_to 'Back', attendances_path %>
+<%= link_to 'Edit', edit_group_attendance_path(@group, @attendance) %> |
+<%= link_to 'Back', group_attendances_path %>

@@ -8,16 +8,16 @@
 <%= render 'group_tab' %>
 
 <div class="tabs-content">
-  <div class="content active" id="panel1">
+  <div class="content active" id="overview">
     <%= render 'overview' %>
   </div>
-  <div class="content" id="panel2">
+  <div class="content" id="students">
     <%= render 'group_student_list' %>
   </div>
-  <div class="content" id="panel3">
-    <p>Taking attendance will go here</p>
+  <div class="content" id="attendances">
+    <%= render 'group_attendances' %>
   </div>
-  <div class="content" id="panel4">
+  <div class="content" id="courses">
     <%= render 'group_courses' %>
   </div>
 </div>

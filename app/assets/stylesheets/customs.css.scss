@@ -118,6 +118,10 @@ fieldset {
   background: #F0F0F0;
 }
 
+.switch input:checked + label {
+  background: #01814B;
+}
+
 
 /* Columns Wrappers  */
 .full-width {

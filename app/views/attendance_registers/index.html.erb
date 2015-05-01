@@ -1,0 +1,30 @@
+<br>
+<h5>Attendance Registers</h5>
+<br>
+<table class="responsive">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Taken On</th>
+      <th>Period</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendance_registers.each do |attendance_register| %>
+      <tr>
+        <td><%= attendance_register.created_at.strftime("%U").to_i %></td>
+        <td><%= link_to attendance_register.created_at.strftime("%a %m %b"), [@group, attendance_register] %></td>
+        <td><%= attendance_register.period.period_title %></td>
+        <td><%= link_to '', [@group, attendance_register], class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_group_attendance_register_path(@group, attendance_register), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', [@group, attendance_register], method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Attendance register', new_group_attendance_register_path %>

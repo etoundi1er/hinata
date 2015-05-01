@@ -33,7 +33,7 @@
       <div class="row">
         <div class="medium-4 columns">
           <%= f.label :date_of_birth %>
-          <%= f.text_field :date_of_birth, { class: "datepicker" } %>
+          <%= f.date_field :date_of_birth %>
         </div>
         
         <div class="medium-4 columns">
@@ -55,7 +55,7 @@
       <div class="row">
         <div class="medium-4 columns">
           <%= f.label :enrollment_date %>
-          <%= f.text_field :enrollment_date, { class: "datepicker" } %>
+          <%= f.date_field :enrollment_date %>
         </div>
       </div>
       <div class="row">
@@ -73,11 +73,11 @@
       <div class="row">
         <div class="medium-4 columns">
           <%= f.label :phone %>
-          <%= f.text_field :phone %>
+          <%= f.phone_field :phone %>
         </div>
         <div class="medium-8 columns">
           <%= f.label :email %>
-          <%= f.text_field :email %>
+          <%= f.email_field :email %>
         </div>
       </div>
       <div class="row">
@@ -130,11 +130,11 @@
               <div class="row">
                 <div class="medium-4 columns">
                   <%= guardian_form.label :phone %>
-                  <%= guardian_form.text_field :phone %>
+                  <%= guardian_form.phone_field :phone %>
                 </div>
                 <div class="medium-4 columns">
                   <%= guardian_form.label :email %>
-                  <%= guardian_form.text_field :email %>
+                  <%= guardian_form.email_field :email %>
                 </div>
                 <div class="medium-4 columns">
                   <%= guardian_form.label :occupation %>
@@ -151,9 +151,9 @@
     <legend>Additional</legend>
 
       <div class="row">
-        <div class="medium-4 columns">
-          <%= f.label :photo_data %>
-          <%= f.text_field :photo_data %>
+        <div class="medium-12 columns">
+          <%= f.label :photo_data, 'Photo Url' %>
+          <%= f.url_field :photo_data %>
         </div>
       </div>
     

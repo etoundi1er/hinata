@@ -1,4 +1,8 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% provide(:title, 'Edit User') %>
+
+<div class="page-title">
+  <h1>Edit <%= resource_name.to_s.humanize %></h1>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -92,12 +96,10 @@
   </fieldset>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "button success radius" %> &nbsp;&nbsp;
+    <%= link_to "Back", :back, class: "button secondary radius" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<%= link_to "Delete this account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

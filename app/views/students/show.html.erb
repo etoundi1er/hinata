@@ -15,25 +15,25 @@
 <%= render 'student_tab' %>
 
 <div class="tabs-content">
-  <div class="content active" id="panel1">
+  <div class="content active" id="overview">
     <%= render 'overview' %>
   </div>
-  <div class="content" id="panel2">
+  <div class="content" id="bio">
     <%= render 'student_bio' %>
   </div>
-  <div class="content" id="panel3">
-    <p>Attendance records</p>
+  <div class="content" id="attendances">
+    <%= render 'student_attendances' %>
   </div>
-  <div class="content" id="panel4">
+  <div class="content" id="courses">
     <%= render 'student_courses' %>
   </div>
-  <div class="content" id="panel5">
+  <div class="content" id="grades">
     <%= render 'student_grades' %>
   </div>
-  <div class="content" id="panel6">
+  <div class="content" id="report_cards">
     <p>Link to download PDF report cards</p>
   </div>
-  <div class="content" id="panel7">
+  <div class="content" id="notes">
     <p>All notes on a student</p>
   </div>
 </div>

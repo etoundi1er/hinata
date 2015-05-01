@@ -11,21 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429080015) do
+ActiveRecord::Schema.define(version: 20150430105447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendances", force: :cascade do |t|
-    t.integer  "student_id"
-    t.integer  "course_id"
+  create_table "attendance_registers", force: :cascade do |t|
     t.integer  "group_id"
-    t.integer  "status"
-    t.date     "taken_at"
-    t.integer  "employee_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "period_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "attendance_registers", ["group_id"], name: "index_attendance_registers_on_group_id", using: :btree
+  add_index "attendance_registers", ["period_id"], name: "index_attendance_registers_on_period_id", using: :btree
+
+  create_table "attendances", force: :cascade do |t|
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "student_id"
+    t.integer  "attendance_register_id"
+    t.string   "notes"
+    t.boolean  "status",                 default: true, null: false
+  end
+
+  add_index "attendances", ["attendance_register_id"], name: "index_attendances_on_attendance_register_id", using: :btree
+  add_index "attendances", ["student_id"], name: "index_attendances_on_student_id", using: :btree
 
   create_table "chapters", force: :cascade do |t|
     t.string   "chapter_title"
@@ -160,6 +171,15 @@ ActiveRecord::Schema.define(version: 20150429080015) do
   add_index "lessons", ["chapter_id"], name: "index_lessons_on_chapter_id", using: :btree
   add_index "lessons", ["curriculum_id"], name: "index_lessons_on_curriculum_id", using: :btree
 
+  create_table "periods", force: :cascade do |t|
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "weekday"
+    t.string   "period_title"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -243,6 +263,10 @@ ActiveRecord::Schema.define(version: 20150429080015) do
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
+  add_foreign_key "attendance_registers", "groups"
+  add_foreign_key "attendance_registers", "periods"
+  add_foreign_key "attendances", "attendance_registers"
+  add_foreign_key "attendances", "students"
   add_foreign_key "chapters", "courses"
   add_foreign_key "chapters", "curriculums"
   add_foreign_key "courses", "course_categories"
