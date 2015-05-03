@@ -29,6 +29,9 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+#Offline application gem
+gem "rack-offline"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
