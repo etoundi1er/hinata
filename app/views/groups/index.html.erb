@@ -4,14 +4,54 @@
   <h1>Classes</h1>
 </div>
 
-<%= link_to 'Create a new class', new_group_path, class: 'button tiny radius' %>
+<a href="#" data-reveal-id="myModal" class="button radius">Add A Class</a>
+
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      
+<!--    Form starts    -->
+      
+        <%= form_for(@group) do |f| %>
+          <% if @group.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@group.errors.count, "error") %> prohibited this class from being saved:</h2>
+
+              <ul>
+              <% @group.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :group_name, 'Class Name' %><br>
+            <%= f.text_field :group_name %>
+          </div>
+          <div class="field">
+            <%= f.label :group_code, 'Short Name' %><br>
+            <%= f.text_field :group_code %>
+          </div>
+          <div class="field">
+            <%= f.label :room %><br>
+            <%= f.text_field :room %>
+          </div>
+          <div class="actions">
+            <%= f.submit class: 'button success tony radius' %> &nbsp;&nbsp;
+            <%= link_to 'Close', groups_url, class: 'button secondary tony radius' %> 
+          </div>
+        <% end %>
+
+<!--   End of form     -->
+      
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
 <br>
 
 <table class="responsive">
   <thead>
     <tr>
-      <th>Class name</th>
-      <th>Class code</th>
+      <th>Class Name</th>
+      <th>Class Code</th>
       <th>Room</th>
       <th width="10%" colspan="2"></th>
     </tr>
@@ -24,7 +64,7 @@
       <td>${room}</td>
     </tr>
   </script>
-  <tbody id="group_items">
+  <tbody id="groups">
       
   </tbody>
 </table>

@@ -6,8 +6,8 @@ class AttendanceRegistersController < ApplicationController
   # GET /attendance_registers
   # GET /attendance_registers.json
   def index
-    @attendance_registers = find_group.attendance_registers.all
-#     respond_with(@attendance_registers)
+    @attendance_registers = find_group.attendance_registers.order('created_at DESC').paginate(:per_page => 5, :page => params[:page])
+    
   end
 
   # GET /attendance_registers/1
@@ -25,7 +25,9 @@ class AttendanceRegistersController < ApplicationController
     end
     
     respond_to do |format|
+      @attendance_register
       format.html
+      format.json
     end
   end
 

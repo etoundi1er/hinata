@@ -19,13 +19,13 @@
 <table>
   <thead>
     <tr>
-      <th>Names</th>
+      <th>Students</th>
       <th>Status</th>
       <th>Notes</th>
     </tr>
   </thead>
 
-  <script type="type/html" id="attendance_template">
+<!--   <script type="type/html" id="attendance_register_template">
   {{each attendances}}
     <tr>
       <td>${student_id}</td>
@@ -33,8 +33,15 @@
       <td>${notes}</td>
     </tr>
   {{/each}}
-  </script>
-  <tbody id="attendance_items">
-      
+  </script> -->
+  
+  <tbody>
+    <% @attendance_register.attendances.each do |att| %>
+      <tr>
+        <td><%= att.student.full_name %></td>
+        <td><%= att.show_status %></td>
+        <td><%= att.notes %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

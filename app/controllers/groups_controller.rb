@@ -1,10 +1,13 @@
 class GroupsController < ApplicationController
+  respond_to :html, :json
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.paginate(:per_page => 20, :page => params[:page])
+    @groups = Group.order('created_at DESC').paginate(:per_page => 20, :page => params[:page])
+    @group = Group.new
+    respond_with(@groups)
   end
 
   # GET /groups/1
@@ -38,7 +41,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Class was successfully created.' }
+        format.html { redirect_to groups_url, notice: 'Class was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -79,6 +82,7 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:group_name, :group_code, :room)
+      params.require(:group).permit(:group_name, :group_code, :room, attendance_registers_attributes: [:id, :group_id, :period_id], attendances_attributes: [:id, :student_id, :status, :notes]
+        )
     end
 end
