@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.tmpl.min
+//= require jquery.offline
+//= require json
 //= require foundation
 //= require jquery-ui/datepicker
 //= require chosen-jquery
@@ -21,4 +24,18 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function() { 
+  $(document).foundation(); 
+  $.retrieveJSON("./40.json", function(data) {
+    $("#attendance_items").html($("#attendance_template").tmpl(data));
+ });
+  
+  
+  $.retrieveJSON("/groups.json", function(data) {
+    $("#group_items").html($("#group_template").tmpl(data));
+ });
+  
+});
+
+
+

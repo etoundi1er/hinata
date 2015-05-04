@@ -12,3 +12,7 @@ Rails.application.config.assets.version = '1.0'
 
 # Add Modernizr to precompiled assets for production
 Rails.application.config.assets.precompile += %w( vendor/modernizr.js )
+
+Rails.application.config.assets.precompile += %w( jquery.tmpl.min.js )
+Rails.application.config.assets.precompile += %w( jquery.offline.js )
+Rails.application.config.assets.precompile += %w( json.js )

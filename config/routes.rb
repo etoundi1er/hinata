@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   offline = Rack::Offline.configure :cache_interval => 120 do
     #cache "images/masthead.png"
     cache ActionController::Base.helpers.asset_path("application.js")
+    cache ActionController::Base.helpers.asset_path("jquery.offline.js")
+    cache ActionController::Base.helpers.asset_path("jquery.tmpl.min.js")
+    cache ActionController::Base.helpers.asset_path("json.js")
 #     cache ActionController::Base.helpers.asset_path("jquery.js")
 #     cache ActionController::Base.helpers.asset_path("jquery_ujs.js")
 #     cache ActionController::Base.helpers.asset_path("jquery.turbolinks.js")

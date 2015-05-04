@@ -25,13 +25,16 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @attendance_register.attendances.each do |att| %>
-      <tr>
-        <td><%= att.student.full_name %></td>
-        <td><%= att.show_status %></td>
-        <td><%= att.notes %></td>
-      </tr>
-    <% end %>
+  <script type="type/html" id="attendance_template">
+  {{each attendances}}
+    <tr>
+      <td>${student_id}</td>
+      <td>${status}</td>
+      <td>${notes}</td>
+    </tr>
+  {{/each}}
+  </script>
+  <tbody id="attendance_items">
+      
   </tbody>
 </table>

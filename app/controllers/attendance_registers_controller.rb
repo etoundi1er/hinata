@@ -1,4 +1,5 @@
 class AttendanceRegistersController < ApplicationController
+  respond_to :html, :json
   before_filter :find_group
   before_action :set_attendance_register, only: [:show, :edit, :update, :destroy]
 
@@ -6,6 +7,7 @@ class AttendanceRegistersController < ApplicationController
   # GET /attendance_registers.json
   def index
     @attendance_registers = find_group.attendance_registers.all
+#     respond_with(@attendance_registers)
   end
 
   # GET /attendance_registers/1

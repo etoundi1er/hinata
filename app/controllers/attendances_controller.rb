@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  respond_to :html, :json
   before_filter :find_group
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
   set_tab :attendances
@@ -8,11 +9,13 @@ class AttendancesController < ApplicationController
   def index
 #     @students = find_group.students
     @attendances = Attendance.all
+    respond_with(@attendances)
   end
   
   # GET /attendances/1
   # GET /attendances/1.json
   def show
+    respond_with(@attendance)
   end
 
   # GET /attendances/new

@@ -15,7 +15,7 @@
     <% @attendance_registers.each do |attendance_register| %>
       <tr>
         <td><%= attendance_register.created_at.strftime("%U").to_i %></td>
-        <td><%= link_to attendance_register.created_at.strftime("%a %m %b"), [@group, attendance_register] %></td>
+        <td><%= link_to attendance_register.created_at.strftime("%a, %d %b"), [@group, attendance_register] %></td>
         <td><%= attendance_register.period.period_title %></td>
         <td><%= link_to '', [@group, attendance_register], class: 'fa fa-eye' %></td>
         <td><%= link_to '', edit_group_attendance_register_path(@group, attendance_register), class: 'fa fa-pencil-square-o' %></td>

@@ -17,16 +17,15 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= link_to group.group_name, group %></td>
-        <td><%= group.group_code %></td>
-        <td><%= group.room %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <script type="type/html" id="group_template">
+    <tr>
+      <td><a href="./groups/${id}">${group_name}</a></td>
+      <td>${group_code}</td>
+      <td>${room}</td>
+    </tr>
+  </script>
+  <tbody id="group_items">
+      
   </tbody>
 </table>
 
