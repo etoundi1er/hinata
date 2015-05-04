@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :username, presence: true# :first_name, :last_name, :date_of_birth, :gender, 
-  validates :username, uniqueness: true
+  validates :username, :email, :first_name, :last_name, presence: true 
+  validates :username, :email, uniqueness: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   has_and_belongs_to_many :roles
