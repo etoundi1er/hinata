@@ -13,6 +13,7 @@
       <th>Title</th>
       <th>Category</th>
       <th>Date</th>
+      <th width="5%" colspan="1"></th>
     </tr>
   </thead>
 
@@ -22,7 +23,7 @@
         <td><%= link_to exam.title, [@course, exam] %></td>
         <td><%= exam.exam_category.title %></td>
         <td><%= exam.exam_date %></td>
-        <td><%= link_to 'Delete', [@course, exam], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', [@course, exam], method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o' %></td>
       </tr>
     <% end %>
   </tbody>

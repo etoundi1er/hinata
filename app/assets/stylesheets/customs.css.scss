@@ -79,10 +79,14 @@ table {
 }
 
 /* Best_in_place input fields */
-.best_in_place input {
-  width: 70px !important;
-  height: 15px !important;
-  background: #CCEFFF;
+/* .best_in_place input {
+  width: 100% !important;
+  height: 100% !important;
+  background: #000;
+} */
+
+.best_input {
+  background: red;
 }
 
 /* Forms */

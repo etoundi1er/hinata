@@ -30,21 +30,6 @@ class Ability
 #     else
 #       can :read, [Course, Student, Group, Chapter, Lesson, Grade, Exam, Guardian]
 #   end
-    
-    
-#     if user.admin?
-#       can :manage, :all
-#     elsif user.employee?
-#       can :read, Item
-#       can :create, Item
-#       can :update, Item do |item|
-#         item.try(:user) == user
-#       end
-#       can :destroy, Item do |item|
-#         item.try(:user) == user
-#       end
-#     elsif user.student?
-#       can :read, Item
-#     end
+
   end
 end

@@ -18,8 +18,6 @@ Rails.application.routes.draw do
     cache ActionController::Base.helpers.asset_path("flaticons/flaticon.woff")
     cache ActionController::Base.helpers.asset_path("flaticons/flaticon.ttf") 
     cache ActionController::Base.helpers.asset_path("flaticons/flaticon.svg") 
-#     cache ActionController::Base.helpers.asset_path("style.css")
-#     cache ActionController::Base.helpers.asset_path("custom.css")
     network "/"
   end
   get "/application.manifest" => offline

@@ -13,7 +13,7 @@
     </div>
 <br>
 
-<table class="responsive", width="100%">
+<table>
   <thead>
     <tr>
       <th width="60%">Name</th>
@@ -26,7 +26,7 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= link_to student.full_name, student %></td>
-        <td><%= student.group.group_name %></td>
+        <td><%= student.group.group_code %></td>
         <td><%= link_to '', edit_student_path(student), class: 'fa fa-pencil-square-o' %></td>
         <td><%= link_to '', student, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o' %></td>
       </tr>

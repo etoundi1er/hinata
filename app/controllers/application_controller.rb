@@ -3,9 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+  #   Devise setup
   before_action :authenticate_user!
   before_filter :configure_permitted_parameters, if: :devise_controller?
   
+  #   CanCanCan setup
+#   check_authorization
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
   
   protected
   
