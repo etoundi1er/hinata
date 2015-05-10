@@ -1,6 +1,7 @@
 <h5>Exams List 
   <span class="right">
-    <%= link_to '<i class="fa fa-plus"></i>&nbsp; Add Exams'.html_safe, new_course_exam_path(@course, @exam) %>
+    <%= link_to '<i class="fa fa-plus"></i>&nbsp; Add Exams'.html_safe, new_course_exam_path(@course, @exam) %> &nbsp; &nbsp;
+    <%= link_to '<i class="flaticon-settings49"></i>&nbsp; Exams Categories'.html_safe, course_exam_categories_path(@course, @exam_categories) %>
   </span>
 </h5>
 <br>

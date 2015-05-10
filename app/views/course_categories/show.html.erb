@@ -1,7 +1,7 @@
 <% provide(:title, @course_category.cc_name) %>
 
 <div class="page-title clearfix">
-  <h1><%= @course_category.cc_name %> <span class="right"><%= link_to 'Edit', edit_course_category_path(@course_category) %> | <%= link_to 'View all', course_categories_path %></span></h1>
+  <h1><%= @course_category.cc_name %> <span class="right"><%= link_to 'Edit', edit_course_category_path(@course_category) %> | <%= link_to 'Back', course_categories_path %></span></h1>
 </div>
 
   <% @course_category.courses.each do |course| %>

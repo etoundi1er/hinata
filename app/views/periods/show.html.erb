@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Periods') %>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @period.start_time %>
+<div class="page-title">
+  <h1><%= @period.period_title %></h1>
+</div>
+
+<p class="panel">
+  Start time:
+  <strong><%= @period.start_time.strftime('%H:%M') %></strong>
 </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @period.end_time %>
+<p class="panel">
+  End time:
+  <strong><%= @period.end_time.strftime('%H:%M') %></strong>
 </p>
 
-<p>
-  <strong>Weekday:</strong>
-  <%= @period.weekday %>
+<p class="panel">
+  Weekday:
+ <strong><%= @period.weekday.strftime('%A') %></strong>
 </p>
 
-<p>
-  <strong>Period title:</strong>
-  <%= @period.period_title %>
-</p>
 
-<%= link_to 'Edit', edit_period_path(@period) %> |
-<%= link_to 'Back', periods_path %>
+<%= link_to 'Edit', edit_period_path(@period), class: 'button radius secondary' %> |
+<%= link_to 'Back', periods_path, class: 'button radius secondary' %>
