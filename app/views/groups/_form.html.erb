@@ -1,4 +1,4 @@
-<%= form_for(@group) do |f| %>
+<%= form_for @group, :html => {:id => "addSubmit"} do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this class from being saved:</h2>
@@ -24,7 +24,7 @@
     <%= f.text_field :room %>
   </div>
   <div class="actions">
-    <%= f.submit class: 'button success tony radius' %> &nbsp;&nbsp;
+    <%= f.submit class: 'button success tony radius', :id => "addSubmit" %> &nbsp;&nbsp;
     <%= link_to 'Cancel', @group, class: 'button secondary tony radius' %> 
     <%= link_to 'Delete Class', @group, class: 'right button alert tony radius', method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>

@@ -26,6 +26,14 @@
 
 $(function() { 
   $(document).foundation(); 
+  
+//   $('#addSubmit').on('submit', function() {
+//     $('#myModal').modal('hide');
+//   });
+  
+//   $('#addSubmit').click(function() {
+//     return $('#myModal').modal('hide');
+//   });
 
 //   $.retrieveJSON("/groups.json", function(data) {
 //     $("#group_items").html($("#group_template").tmpl(data));
