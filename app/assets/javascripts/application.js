@@ -30,15 +30,7 @@ $(function() {
 //   $('#addSubmit').on('submit', function() {
 //     $('#myModal').modal('hide');
 //   });
-  
-//   $('#addSubmit').click(function() {
-//     return $('#myModal').modal('hide');
-//   });
 
-//   $.retrieveJSON("/groups.json", function(data) {
-//     $("#group_items").html($("#group_template").tmpl(data));
-//  });
-  
 // if ($.support.localStorage) {
 //     $(window.applicationCache).bind("error", function() {
 //       console.log("There was an error when loading the cache manifest.");
