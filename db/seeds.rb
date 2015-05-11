@@ -19,6 +19,10 @@ User.create!(first_name: 'Allpohon', last_name: 'Will', username: 'all.wihll', e
 CourseCategory.create!(cc_name: 'Art & Litterature Courses')
 CourseCategory.create!(cc_name: 'Science Courses')
 
+Period.create!(start_time: '2000-01-01T08:00:00.000Z', end_time: '2000-01-01T09:00:00.000Z', weekday: '2015-05-01', period_title: '1st Period' )
+Period.create!(start_time: '2000-01-01T09:00:00.000Z', end_time: '2000-01-01T10:00:00.000Z', weekday: '2015-05-01', period_title: '2n Period' )
+Period.create!(start_time: '2000-01-01T10:00:00.000Z', end_time: '2000-01-01T11:00:00.000Z', weekday: '2015-05-01', period_title: '3rd Period' )
+
 Group.create!(group_name: 'Premiere C', group_code: '1ere C')
 Group.create!(group_name: 'Terminale D', group_code: 'Tle D')
 Group.create!(group_name: 'Sixieme A', group_code: '6e A')

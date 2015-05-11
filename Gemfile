@@ -12,7 +12,6 @@ gem 'jquery-turbolinks'
 
 gem "font-awesome-rails"
 gem 'will_paginate'
-# gem 'will_paginate'
 gem 'simple_calendar', '~> 1.1.0'
 # Pagination
 gem "kaminari"
