@@ -17,8 +17,14 @@ if it fails, clearing pid file using the following command: pgrep ruby
       
       > bundle install
       > rake db:migrate
+      > rake db:seed
   
 2 - Alternatively, to save yourself some time, a demo ( master branch frozen to the April 27th for marking purpose) is available here. This demo is identical to the source code provided on submission date.
     
     https://hidden-river-8355.herokuapp.com/
+      Demo admin user
+        email: john@mail.com
+        password: password1234
+        
+
     
