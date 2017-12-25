@@ -6,4 +6,8 @@ class Group < ActiveRecord::Base
   has_many :attendance_registers
   has_many :periods, through: :attendance_registers
   has_many :attendances, through: :attendance_registers
+  
+  def to_param
+    "#{id}-#{group_name.parameterize}"
+  end
 end

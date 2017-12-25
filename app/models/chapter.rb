@@ -12,4 +12,8 @@ class Chapter < ActiveRecord::Base
     self
   end
   
+  def to_param
+    "#{id}-#{chapter_title.parameterize}"
+  end
+  
 end

@@ -9,4 +9,8 @@ class Course < ActiveRecord::Base
   def students
     group.students
   end
+  
+  def to_param
+    "#{id}-#{course_name.parameterize}"
+  end
 end

@@ -76,3 +76,6 @@ $(function() {
 
 
 
+$(function(){
+    $('#menu').slicknav();
+});

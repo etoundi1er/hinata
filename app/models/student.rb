@@ -20,7 +20,7 @@ class Student < ActiveRecord::Base
   def full_name
     "#{last_name} #{first_name}".titleize
   end
-  
+      
 #   def courses
 #     group.courses
 #   end
@@ -30,6 +30,10 @@ class Student < ActiveRecord::Base
       guardians.build
     end
     self
+  end
+  
+  def to_param
+    "#{id}-#{full_name.parameterize}"
   end
   
 end

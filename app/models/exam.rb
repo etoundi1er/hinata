@@ -3,4 +3,8 @@ class Exam < ActiveRecord::Base
   belongs_to :exam_category
   belongs_to :course
   has_many   :grades
+  
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end

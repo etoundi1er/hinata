@@ -42,12 +42,12 @@ Student.create!(first_name: 'Claude', last_name: 'Adolph', username: 'claudae.a'
 Student.create!(first_name: 'Vanessa', last_name: 'Oleig', username: 'van.olfed', date_of_birth: '1990-12-10', gender: 'Female', group_id: '4', enrollment_date: '2015-03-25')
 Student.create!(first_name: 'Elisa', last_name: 'Marie', username: 'elisaad.m', date_of_birth: '1990-12-10', gender: 'Female', group_id: '4', enrollment_date: '2015-03-25')
 
-Guardian.create!(first_name: 'Paulo', last_name: 'Maldini')
-Guardian.create!(first_name: 'Nelson', last_name: 'Dida')
-Guardian.create!(first_name: 'Zinedine', last_name: 'Zidane')
-Guardian.create!(first_name: 'Andrea', last_name: 'Pirlo')
-Guardian.create!(first_name: 'Monica', last_name: 'Belucci')
-Guardian.create!(first_name: 'Halle', last_name: 'Berry')
-Guardian.create!(first_name: 'Lauren', last_name: 'Baccall')
+Guardian.create!(first_name: 'Paulo', last_name: 'Maldini', phone: '0741233456')
+Guardian.create!(first_name: 'Nelson', last_name: 'Dida', phone: '07425754766')
+Guardian.create!(first_name: 'Zinedine', last_name: 'Zidane', phone: '0747644336')
+Guardian.create!(first_name: 'Andrea', last_name: 'Pirlo', phone: '0701587856')
+Guardian.create!(first_name: 'Monica', last_name: 'Belucci', phone: '07974245966')
+Guardian.create!(first_name: 'Halle', last_name: 'Berry', phone: '07014774533')
+Guardian.create!(first_name: 'Lauren', last_name: 'Baccall', phone: '07004001577')
 
 

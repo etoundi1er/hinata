@@ -8,4 +8,8 @@ class Guardian < ActiveRecord::Base
     "#{last_name} #{first_name}".titleize
   end
   
+  def to_param
+    "#{id}-#{full_name.parameterize}"
+  end
+  
 end

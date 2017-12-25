@@ -19,8 +19,9 @@ default: &default
   encoding: unicode
   pool: 5
   host: localhost
-  username: action
-  password:
+  username: postgres
+  # password: Susanoo.10
+  port: 5432
 
 development:
   <<: *default
